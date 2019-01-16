@@ -26,13 +26,24 @@
 			<organizationUrl>https://averbis.com/</organizationUrl>
 		</developer>
 	</developers>
-
+	
 	<scm>
 		<connection>scm:git:git://github.com/averbis/core-typesystems</connection>
 		<developerConnection>scm:git:git@github.com:averbis/core-typesystems.git</developerConnection>
 		<url>https://github.com/averbis/core-typesystems</url>
 		<tag>HEAD</tag>
 	</scm>
+	
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 	
 	<profiles>
 		<profile>
