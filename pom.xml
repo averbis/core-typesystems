@@ -5,7 +5,9 @@
 	<artifactId>core-typesystems</artifactId>
     <version>3.9.0</version>
 
+	<name>${project.groupId}:${project.artifactId}</name>
 	<description>The UIMA type systems of the Averbis core components</description>
+	<url>https://github.com/averbis/core-typesystems</url>
 
 	<packaging>pom</packaging>
 	
@@ -16,6 +18,14 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+	
+	<developers>
+	    <developer>
+			<email>info@averbis.com</email>
+			<organization>Averbis</organization>
+			<organizationUrl>https://averbis.com/</organizationUrl>
+		</developer>
+	</developers>
 
 	<scm>
 		<connection>scm:git:git://github.com/averbis/core-typesystems</connection>
