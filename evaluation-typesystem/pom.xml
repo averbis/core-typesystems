@@ -9,7 +9,7 @@
     <parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>core-typesystems</artifactId>
-		<version>3.21.0</version>
+		<version>3.21.1-SNAPSHOT</version>
 	</parent>
 	
 	<dependencies>
