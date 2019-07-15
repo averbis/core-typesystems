@@ -46,6 +46,7 @@
 		<module>measurement-typesystem</module>
 		<module>temporal-typesystem</module>
 		<module>named-entity-typesystem</module>
+		<module>neural-typesystem</module>
 	</modules>
 	
 </project>
