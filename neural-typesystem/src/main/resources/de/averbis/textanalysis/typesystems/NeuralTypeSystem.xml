@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription
+	xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.NeuralTypeSystem</name>
+	<description>This type system contains types for neural networks.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem" />
+		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem" />
+	</imports>
+	<types>
+		<!-- name -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.Wordpiece</name>
+			<description>A tokenized part of a word.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>normalized</name>
+					<description>Normalized and lowercased version of the wordpiece without accents.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>

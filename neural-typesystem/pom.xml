@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>numeric-value-typesystem</artifactId>
+	<artifactId>neural-typesystem</artifactId>
 	<name>${project.artifactId}</name>
-	<description>Type system for numbers</description>
+	<description>Type system for helper annotations for neural networks.</description>
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
@@ -50,7 +50,7 @@
 						</goals>
 						<configuration>
 							<typeSystemIncludes>
-							    <typeSystemInclude>src/main/resources/de/averbis/textanalysis/typesystems/NumericValueTypeSystem.xml</typeSystemInclude>
+							    <typeSystemInclude>src/main/resources/de/averbis/textanalysis/typesystems/NeuralTypeSystem.xml</typeSystemInclude>
 							</typeSystemIncludes>
 							<limitToProject>true</limitToProject>
 						</configuration>
