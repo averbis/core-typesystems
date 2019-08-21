@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<typeSystemDescription
-	xmlns="http://uima.apache.org/resourceSpecifier">
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
 	<name>de.averbis.textanalysis.typesystems.NeuralTypeSystem</name>
 	<description>This type system contains types for neural networks.</description>
 	<version>${project.version}</version>
@@ -10,7 +9,7 @@
 		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem" />
 	</imports>
 	<types>
-		<!-- name -->
+
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.Wordpiece</name>
 			<description>A tokenized part of a word.</description>
@@ -18,10 +17,59 @@
 			<features>
 				<featureDescription>
 					<name>normalized</name>
-					<description>Normalized and lowercased version of the wordpiece without accents.</description>
+					<description>Normalized (and lowercased) version of the wordpiece without accents.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 			</features>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.embedding.Embedding</name>
+			<description>Represents an embedding for a given target annotation.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation
+			</supertypeName>
+			<features>
+				<featureDescription>
+					<name>vector</name>
+					<description>The actual dense embedding vector.</description>
+					<rangeTypeName>uima.cas.DoubleArray</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>dimension</name>
+					<description>The dimension of the embedding.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>kind</name>
+					<description>The kind of the embedding.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>id</name>
+					<description>Identifier representing the embedding model.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>reference</name>
+					<description>The original annotation represented by the embedding.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.embedding.WordEmbedding</name>
+			<description>Represents a word embedding for a given target	annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.embedding.SentenceEmbedding</name>
+			<description>Represents a sentence embedding for a given target	annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.embedding.ParagraphEmbedding</name>
+			<description>Represents a paragraph embedding for a given target annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
 		</typeDescription>
 	</types>
 </typeSystemDescription>
