@@ -58,17 +58,27 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.WordEmbedding</name>
-			<description>Represents a word embedding for a given target	annotation.</description>
+			<description>Represents a word embedding for a given target annotation.</description>
 			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.SentenceEmbedding</name>
-			<description>Represents a sentence embedding for a given target	annotation.</description>
+			<description>Represents a sentence embedding for a given target annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.ConceptEmbedding</name>
+			<description>Represents a concept embedding for a given target annotation.</description>
 			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.ParagraphEmbedding</name>
 			<description>Represents a paragraph embedding for a given target annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.DocumentEmbedding</name>
+			<description>Represents a document embedding for a given target annotation.</description>
 			<supertypeName>de.averbis.textanalysis.types.embedding.Embedding</supertypeName>
 		</typeDescription>
 	</types>
