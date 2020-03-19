@@ -20,6 +20,11 @@
 					<description>Normalized (and lowercased) version of the wordpiece without accents.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>tokenStart</name>
+					<description>Flag indicating that the word piece is located at the beginning of a token.</description>
+					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
+				</featureDescription>
 			</features>
 		</typeDescription>
 
