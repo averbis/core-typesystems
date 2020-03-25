@@ -21,6 +21,11 @@
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
+					<name>embedding</name>
+					<description>Optional embedding of this wordpiece.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.WordpieceEmbedding</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
 					<name>tokenStart</name>
 					<description>Flag indicating that the word piece is located at the beginning of a token.</description>
 					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
