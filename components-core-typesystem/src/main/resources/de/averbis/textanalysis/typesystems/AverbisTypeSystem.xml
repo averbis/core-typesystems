@@ -262,6 +262,11 @@
                     <rangeTypeName>uima.cas.String</rangeTypeName>
                 </featureDescription>
                 <featureDescription>
+                    <name>path</name>
+                    <description>The path of the document.</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>                
+                <featureDescription>
                     <name>fileName</name>
                     <description>The name of the source file (often used by cas consumers which produce an output file for each CAS; this name is used as base).</description>
                     <rangeTypeName>uima.cas.String</rangeTypeName>

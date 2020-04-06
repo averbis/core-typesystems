@@ -5,8 +5,8 @@
 	<version>${project.version}</version>
 	<vendor>Averbis GmbH</vendor>
 	<imports>
-		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem" />
-		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem" />
+		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem"/>
+		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem"/>
 	</imports>
 	<types>
 
@@ -20,14 +20,28 @@
 					<description>Normalized (and lowercased) version of the wordpiece without accents.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>embedding</name>
+					<description>Optional embedding of this wordpiece.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.WordpieceEmbedding</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>tokenStart</name>
+					<description>Flag indicating that the word piece is located at the beginning of a token.</description>
+					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>tokenStartWordpiece</name>
+					<description>Optional reference to additional wordpiece representing the start of a token.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.Wordpiece</rangeTypeName>
+				</featureDescription>
 			</features>
 		</typeDescription>
 
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.Embedding</name>
 			<description>Represents an embedding for a given target annotation.</description>
-			<supertypeName>de.averbis.extraction.types.CoreAnnotation
-			</supertypeName>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 			<features>
 				<featureDescription>
 					<name>vector</name>
@@ -60,6 +74,18 @@
 			<name>de.averbis.textanalysis.types.WordEmbedding</name>
 			<description>Represents a word embedding for a given target annotation.</description>
 			<supertypeName>de.averbis.textanalysis.types.Embedding</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.WordpieceEmbedding</name>
+			<description>Represents a wordpiece embedding for a given target annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.Embedding</supertypeName>
+			<features>
+				<featureDescription>
+					<name>tokenStartEmbedding</name>
+					<description>Optional embedding of an additional token start wordpiece.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.WordpieceEmbedding</rangeTypeName>
+				</featureDescription>
+			</features>
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.SentenceEmbedding</name>
