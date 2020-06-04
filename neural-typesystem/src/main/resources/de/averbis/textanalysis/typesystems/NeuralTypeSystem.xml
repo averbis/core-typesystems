@@ -35,6 +35,11 @@
 					<description>Optional reference to additional wordpiece representing the start of a token.</description>
 					<rangeTypeName>de.averbis.textanalysis.types.Wordpiece</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>vocabularyIndex</name>
+					<description>Index of wordpiece in the vocabulary.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
 			</features>
 		</typeDescription>
 
