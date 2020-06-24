@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>core-typesystems</artifactId>
@@ -11,11 +13,15 @@
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>parent-pom-typesystems</artifactId>
-		<version>4.0.0-alpha-1</version>
+		<version>3.22.0</version>
 	</parent>
 
 	<packaging>pom</packaging>
-	
+
+	<properties>
+		<uima-version>3.1.1</uima-version>
+	</properties>
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
@@ -23,22 +29,22 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	
+
 	<developers>
-	    <developer>
+		<developer>
 			<email>info@averbis.com</email>
 			<organization>Averbis</organization>
 			<organizationUrl>https://averbis.com/</organizationUrl>
 		</developer>
 	</developers>
-	
+
 	<scm>
 		<connection>scm:git:git://github.com/averbis/core-typesystems</connection>
 		<developerConnection>scm:git:git@github.com:averbis/core-typesystems.git</developerConnection>
 		<url>https://github.com/averbis/core-typesystems</url>
 		<tag>HEAD</tag>
 	</scm>
-	
+
 	<modules>
 		<module>components-core-typesystem</module>
 		<module>evaluation-typesystem</module>
@@ -48,5 +54,4 @@
 		<module>named-entity-typesystem</module>
 		<module>neural-typesystem</module>
 	</modules>
-	
 </project>
