@@ -47,6 +47,7 @@
 		<module>temporal-typesystem</module>
 		<module>named-entity-typesystem</module>
 		<module>neural-typesystem</module>
+		<module>text-typesystem</module>
 	</modules>
 	
 </project>
