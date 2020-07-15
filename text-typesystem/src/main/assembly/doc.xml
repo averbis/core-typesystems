@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>doc</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+			<directory>target/doc/sources</directory>
+			<outputDirectory>doc/sources</outputDirectory>
+			<includes>
+                <include>*.adoc</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>
+    </fileSets>
+</assembly>
