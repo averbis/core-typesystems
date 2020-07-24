@@ -29,6 +29,24 @@
 			</features>
 		</typeDescription>
 		
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.AnnotationClassification</name>
+			<description>General classification result on annotation level.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Label indicating the classification category.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>annotation</name>
+					<description>Optional reference to the classified annotation.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		
 		<!-- words -->
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.text.CWord</name>
