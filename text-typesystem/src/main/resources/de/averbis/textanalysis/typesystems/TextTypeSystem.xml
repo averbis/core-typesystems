@@ -253,16 +253,16 @@
 		</typeDescription>
 		
 		<!-- text spans -->
-<!-- 		<typeDescription> -->
-<!-- 			<name>de.averbis.textanalysis.types.text.InBrackets</name> -->
-<!-- 			<description>Annotation representing a text span in brackets (excluding arrow brackets).</description> -->
-<!-- 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName> -->
-<!-- 		</typeDescription> -->
-<!-- 		<typeDescription> -->
-<!-- 			<name>de.averbis.textanalysis.types.text.InQuotes</name> -->
-<!-- 			<description>Annotation representing a text span in quotes.</description> -->
-<!-- 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName> -->
-<!-- 		</typeDescription> -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.InBrackets</name>
+			<description>Annotation representing a text span in brackets (excluding arrow brackets).</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.InQuotes</name>
+			<description>Annotation representing a text span in quotes.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
 		
 		
 	</types>
