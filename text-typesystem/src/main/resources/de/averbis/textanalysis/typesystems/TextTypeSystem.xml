@@ -28,6 +28,18 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.GenericCue</name>
+			<description>A generic cue.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Optional label indicating the kind of cue.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
 		
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.AnnotationClassification</name>
