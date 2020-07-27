@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription
+	xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.TextTypeSystem</name>
+	<description>This type system contains types for representing text properties.
+	</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem" />
+		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem" />
+	</imports>
+	<types>
+		<!-- words -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.CWord</name>
+			<description>Annotation representing a capitalized word including complex words composed of multiple tokens.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		
+		<!-- numbers -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num1</name>
+			<description>Annotation representing a number with one digit.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num2</name>
+			<description>Annotation representing a number with two digits.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num3</name>
+			<description>Annotation representing a number with three digits.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num4</name>
+			<description>Annotation representing a number with four digits.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num5</name>
+			<description>Annotation representing a number with five digits.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num1_2</name>
+			<description>Annotation representing a number with one or two digits.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Num2_4</name>
+			<description>Annotation representing a number with two to four digits.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		
+		<!-- special characters -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.SpecialChar</name>
+			<description>Annotation representing a special char.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Plus</name>
+			<description>Annotation representing a plus sign.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Minus</name>
+			<description>Annotation representing a minus sign.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Equal</name>
+			<description>Annotation representing a equals sign.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Percent</name>
+			<description>Annotation representing a percent sign.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Asterisk</name>
+			<description>Annotation representing an asterisk.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Caret</name>
+			<description>Annotation representing a caret.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.VerticalBar</name>
+			<description>Annotation representing a vertical bar.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.DollarSign</name>
+			<description>Annotation representing a dollar sign.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.EuroSign</name>
+			<description>Annotation representing a euro sign.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Dash</name>
+			<description>Annotation representing a dash.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Slash</name>
+			<description>Annotation representing a slash.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Backslash</name>
+			<description>Annotation representing a backslash.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Hashtag</name>
+			<description>Annotation representing a hashtag.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Tilde</name>
+			<description>Annotation representing a tilde.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Underscore</name>
+			<description>Annotation representing a underscore.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Quote</name>
+			<description>Annotation representing a quote.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.SingleQuote</name>
+			<description>Annotation representing a single quote.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.Quote</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.DoubleQuote</name>
+			<description>Annotation representing a double quote.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.Quote</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Bullet</name>
+			<description>Annotation representing a bullet.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		
+		<!-- brackets -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.Bracket</name>
+			<description>Annotation representing a bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.SpecialChar</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.OpenBracket</name>
+			<description>Annotation representing a open bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.Bracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.CloseBracket</name>
+			<description>Annotation representing a close bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.Bracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.RoundOpenBracket</name>
+			<description>Annotation representing a round open bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.OpenBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.RoundCloseBracket</name>
+			<description>Annotation representing a round close bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.CloseBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.CurlyOpenBracket</name>
+			<description>Annotation representing a curly open bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.OpenBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.CurlyCloseBracket</name>
+			<description>Annotation representing a curly close bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.CloseBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.SquareOpenBracket</name>
+			<description>Annotation representing a square open bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.OpenBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.SquareCloseBracket</name>
+			<description>Annotation representing a square close bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.CloseBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.ArrowOpenBracket</name>
+			<description>Annotation representing a arrow open bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.OpenBracket</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.ArrowCloseBracket</name>
+			<description>Annotation representing a arrow close bracket.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.CloseBracket</supertypeName>
+		</typeDescription>
+		
+		<!-- text spans -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.TextSpan</name>
+			<description>Annotation representing a text span.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.InBrackets</name>
+			<description>Annotation representing a text span in brackets (excluding arrow brackets).</description>
+			<supertypeName>de.averbis.textanalysis.types.text.TextSpan</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.InQuotes</name>
+			<description>Annotation representing a text span in quotes.</description>
+			<supertypeName>de.averbis.textanalysis.types.text.TextSpan</supertypeName>
+		</typeDescription>
+		
+		<!-- structural/layout -->
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.FreeLine</name>
+			<description>First line of a paragraph that is preceded by an empty line.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.LineFree</name>
+			<description>Last line of a paragraph that is followed by an empty line.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.FirstInLine</name>
+			<description>First token or fragment in a line.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.LastInLine</name>
+			<description>Last token or fragment in a line.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.FirstLine</name>
+			<description>First line in the document.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.LastLine</name>
+			<description>Last line in the document.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.FirstInDocument</name>
+			<description>First token or fragment in the document.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.LastInDocument</name>
+			<description>Last token or fragment in the document.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.text.TrimmedDocument</name>
+			<description>A trimmed version of the document annotation.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+	</types>
+</typeSystemDescription>
