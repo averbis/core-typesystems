@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription
 	xmlns="http://uima.apache.org/resourceSpecifier">
-	<name>de.averbis.textanalysis.typesystems.TextTypeSystem</name>
-	<description>This type system contains types for representing text properties.
+	<name>de.averbis.textanalysis.typesystems.GenericRelationTypeSystem</name>
+	<description>This type system contains types for representing generic relations.
 	</description>
 	<version>${project.version}</version>
 	<vendor>Averbis GmbH</vendor>
