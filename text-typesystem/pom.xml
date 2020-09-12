@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>text-typesystem</artifactId>
+	<name>${project.artifactId}</name>
+	<description>Type system for general text properties and representations.</description>
+
+	<parent>
+		<groupId>de.averbis.textanalysis</groupId>
+		<artifactId>core-typesystems</artifactId>
+		<version>3.26.0-SNAPSHOT</version>
+	</parent>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimaj-core</artifactId>
+			<version>${uima-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.averbis.textanalysis</groupId>
+			<artifactId>components-core-typesystem</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xml-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.uima</groupId>
+				<artifactId>jcasgen-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<typeSystemIncludes>
+							    <typeSystemInclude>src/main/resources/de/averbis/textanalysis/typesystems/TextTypeSystem.xml</typeSystemInclude>
+							</typeSystemIncludes>
+							<limitToProject>true</limitToProject>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

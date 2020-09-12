@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription
+	xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.GenericRelationTypeSystem</name>
+	<description>This type system contains types for representing generic relations.
+	</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem" />
+		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.AnnotationScope</name>
+			<description>Scope of a cue annotation.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Optional label indicating the kind of scope.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>cue</name>
+					<description>The cue indicating the scope.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.GenericCue</name>
+			<description>A generic cue.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Optional label indicating the kind of cue.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.AnnotationClassification</name>
+			<description>General classification result on annotation level.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Label indicating the classification category.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>annotation</name>
+					<description>Optional reference to the classified annotation.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>
