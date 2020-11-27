@@ -59,6 +59,7 @@
                     <name>predicted</name>
                     <description>All predicted labels for candidate.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
 		</typeDescription>

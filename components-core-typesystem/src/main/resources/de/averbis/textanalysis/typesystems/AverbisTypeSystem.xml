@@ -86,6 +86,7 @@
                     <description>In the case that the normalized version contains diacritics, multiple versions without diacritics are stored in this array. 
                         This feature is used for indexing/search with lucene/solr.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>isStopword</name>
@@ -135,16 +136,19 @@
                     <name>stems</name>
                     <description>Stems of the full form.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>segments</name>
                     <description>Segments of the full form.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>tokens</name>
                     <description>Token strings of the full form.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
         </typeDescription>
@@ -196,7 +200,7 @@
                         Note that there is also matchedAnnotations which list the actual annotations involved in the matching process (i.e., token, stem, segment, etc.).</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Token</elementType>
-                <multipleReferencesAllowed>true</multipleReferencesAllowed>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
         </featureDescription>
                 <featureDescription>
                     <name>matchedAnnotations</name>
@@ -401,6 +405,7 @@
                     <name>midStrings</name>
                     <description>The MID value, multiple for ambiguous MIDs (for MID see Morphosaurus Paper).</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
         </typeDescription>
@@ -552,6 +557,7 @@
                     <name>values</name>
                     <description>The values of the input parameter.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 </features>
         </typeDescription>
