@@ -52,6 +52,7 @@
 					<name>vector</name>
 					<description>The actual dense embedding vector.</description>
 					<rangeTypeName>uima.cas.DoubleArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
 				<featureDescription>
 					<name>dimension</name>

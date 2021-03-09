@@ -28,6 +28,7 @@
                     <description>Segments of this token (i.a. used for respective mode in concept annotator).</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Segment</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>stem</name>
@@ -46,12 +47,14 @@
                         Components which cannot do this ambiguity resolution must rely that the first (and hopefully only) entry is correct!</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Abbreviation</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>concepts</name>
                     <description>List of concepts containing/covering this token (this feature is used for indexing and highlighting with lucene/solr)</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Concept</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>entities</name>
@@ -61,6 +64,7 @@
                         (this feature is used for indexing and highlighting with lucene/solr)</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.CoreAnnotation</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>ignoreByConceptMapper</name>
@@ -82,6 +86,7 @@
                     <description>In the case that the normalized version contains diacritics, multiple versions without diacritics are stored in this array. 
                         This feature is used for indexing/search with lucene/solr.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>isStopword</name>
@@ -131,16 +136,19 @@
                     <name>stems</name>
                     <description>Stems of the full form.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>segments</name>
                     <description>Segments of the full form.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>tokens</name>
                     <description>Token strings of the full form.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
         </typeDescription>
@@ -192,12 +200,14 @@
                         Note that there is also matchedAnnotations which list the actual annotations involved in the matching process (i.e., token, stem, segment, etc.).</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Token</elementType>
-                </featureDescription>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
+        </featureDescription>
                 <featureDescription>
                     <name>matchedAnnotations</name>
                     <description>List of the actual annotations involved in the matching process (i.e., original, stem, segment, etc.).
                         Note that there is also matchedTokens, which lists only matching Token annotations.</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>mappingMode</name>
@@ -352,6 +362,7 @@
                     <description>The entities which grammatically depend on this chunk. Example: in "Der Vater des Kindes" is "des Kindes" the dependent of "Der Vater".</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.CoreAnnotation</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>value</name>
@@ -394,6 +405,7 @@
                     <name>midStrings</name>
                     <description>The MID value, multiple for ambiguous MIDs (for MID see Morphosaurus Paper).</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
         </typeDescription>
@@ -471,6 +483,7 @@
                     <description>Reference to all recognized entities inside this Entity such as Size, Time, Area, Date, Volume, ....</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Entity</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
         </typeDescription>
@@ -508,6 +521,7 @@
                     <description>Annotations contained in the group.</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.CoreAnnotation</elementType>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 <featureDescription>
                     <name>label</name>
@@ -543,6 +557,7 @@
                     <name>values</name>
                     <description>The values of the input parameter.</description>
                     <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
                 </features>
         </typeDescription>
@@ -601,7 +616,7 @@
                     <description>The descriptors extracted by the algorithm accounting to the selection of the sentence.</description>
                     <rangeTypeName>uima.cas.FSArray</rangeTypeName>
                     <elementType>de.averbis.extraction.types.Descriptor</elementType>
-                    <multipleReferencesAllowed>false</multipleReferencesAllowed>
+                    <multipleReferencesAllowed>true</multipleReferencesAllowed>
                 </featureDescription>
             </features>
         </typeDescription>
