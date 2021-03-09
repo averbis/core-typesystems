@@ -1,236 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
-    <name>de.averbis.textanalysis.typesystems.MeasurementTypeSystem</name>
-    <description>This type system contains types for measurements and units.</description>
-    <version>${project.version}</version>
-    <vendor>Averbis GmbH</vendor>
-    <imports>
-		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem"/>
-		<import name="de.averbis.textanalysis.typesystems.NumericValueTypeSystem"/>
-    </imports>
-  <types>
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.Measurement</name>
-      <description>A measurement combining a numeric value and a unit.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>unit</name>
-          <description>The unit of the measurement.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.measurement.Unit</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>value</name>
-          <description>The numeric value of the measurement.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.numericvalue.NumericValue</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>normalizedUnit</name>
-          <description>Normalized string value of the unit.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>normalizedAsciiUnit</name>
-          <description>Ascii normalized string value of the unit.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>normalizedValue</name>
-          <description>The normalized value of the measurement. 
-          This value is the result of the transformation of the numeric value according to the 
-          transformation of the unit to its standard unit.
-          </description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>normalized</name>
-          <description>The concatenation of the normalized numeric value and the ascii normalized unit.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
-          <name>parsedUnit</name>
-          <description>Optional parsable unit string which replaces the unit annotation. It is utilized for normalization.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
-  <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.Unit</name>
-      <description/>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-    <features>
-        <featureDescription>
-          <name>normalizedAscii</name>
-          <description>Ascii normalized string value of the unit.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
-          <name>parsed</name>
-         <description>String value of the parsed/identified unit.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
-          <name>normalized</name>
-          <description>Normalized string value of the unit.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
-          <name>dimension</name>
-          <description>The dimension of the unit in the form like '[L]^3' for volume</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
+	<name>de.averbis.textanalysis.typesystems.MeasurementTypeSystem</name>
+	<description>This type system contains types for measurements and units.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem" />
+		<import name="de.averbis.textanalysis.typesystems.NumericValueTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.Measurement</name>
+			<description>A measurement combining a numeric value and a unit.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>unit</name>
+					<description>The unit of the measurement.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.measurement.Unit</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>value</name>
+					<description>The numeric value of the measurement.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.numericvalue.NumericValue</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>normalizedUnit</name>
+					<description>Normalized string value of the unit.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>normalizedAsciiUnit</name>
+					<description>Ascii normalized string value of the unit.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>normalizedValue</name>
+					<description>The normalized value of the measurement.
+						This value is the result of the transformation of the numeric value according to the
+						transformation of the unit to its standard unit.
+					</description>
+					<rangeTypeName>uima.cas.Double</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>normalized</name>
+					<description>The concatenation of the normalized numeric value and the ascii normalized unit.
+					</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>parsedUnit</name>
+					<description>Optional parsable unit string which replaces the unit annotation. It is utilized
+						for normalization.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.Unit</name>
+			<description />
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>normalizedAscii</name>
+					<description>Ascii normalized string value of the unit.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>parsed</name>
+					<description>String value of the parsed/identified unit.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>normalized</name>
+					<description>Normalized string value of the unit.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>dimension</name>
+					<description>The dimension of the unit in the form like '[L]^3' for volume</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
 
-  <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.MeasurementInterval</name>
-      <description>An interval defined by two measurements, a low and high limit.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>low</name>
-          <description>The lower bound of the interval.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>high</name>
-          <description>The upper bound of the interval.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>lowExcluded</name>
-          <description>Marker set to true if the lower bound itself is not part of the interval.</description>
-          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>highExcluded</name>
-          <description>Marker set to true if the upper bound itself is not part of the interval.</description>
-          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.SimpleMeasurementInterval</name>
-      <description>An interval extending MeasurementInterval with several primitive features representing two measurements.</description>
-      <supertypeName>de.averbis.textanalysis.types.measurement.MeasurementInterval</supertypeName>
-      <features>
-        <featureDescription>
-          <name>lowNormalizedUnit</name>
-          <description>The normalized unit of the lower bound.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>lowNormalizedValue</name>
-          <description>The normalized value of the lower bound.</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>lowNormalized</name>
-          <description>The normalized value combined with the normalized unit of the lower bound.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>lowParsedUnit</name>
-          <description>The parsed unit of the lower bound.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        
-        <featureDescription>
-          <name>highNormalizedUnit</name>
-          <description>The normalized unit of the upper bound.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>highNormalizedValue</name>
-          <description>The normalized value of the upper bound.</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>highNormalized</name>
-          <description>The normalized value combined with the normalized unit of the upper bound.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>highParsedUnit</name>
-          <description>The parsed unit of the upper bound.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        
-      </features>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.RelativeMeasurementInterval</name>
-      <description>A relative interval defined by two measurements, a base and deflection.</description>
-      <supertypeName>de.averbis.textanalysis.types.measurement.MeasurementInterval</supertypeName>
-      <features>
-        <featureDescription>
-          <name>base</name>
-          <description>The base of the interval.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>deflection</name>
-          <description>The deflection of the interval.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.IntervalIndicator</name>
-      <description>A textual representation indicating something an interval like '-' or 'bis'</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.ComparisonIndicator</name>
-      <description>A textual representation of a comparison like '&lt;=' or 'unter', also able to indicate an interval.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.GreaterIndicator</name>
-      <description>A textual representation indicating something is 'greater', also able to indicate an interval.</description>
-      <supertypeName>de.averbis.textanalysis.types.measurement.ComparisonIndicator</supertypeName>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.LessIndicator</name>
-      <description>A textual representation indicating something is 'less', also able to indicate an interval.</description>
-      <supertypeName>de.averbis.textanalysis.types.measurement.ComparisonIndicator</supertypeName>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.NoUnit</name>
-      <description>A textual position that is not a unit.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-    </typeDescription>
-    
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.DictionaryMeasurementMention</name>
-      <description>A textual representation indicating a measurement. This is a helper type for measurements that combine numeric values and units or cause other problems for the unit parsing.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>value</name>
-          <description>Parseable value of the measurement.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>unit</name>
-          <description>Parseable unit of the measurement.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
- 
-     <typeDescription>
-      <name>de.averbis.textanalysis.types.measurement.UnitParseAnchor</name>
-      <description>Helper type to use as anchor for unit parsing.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-    </typeDescription>
-    
-  </types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.MeasurementInterval</name>
+			<description>An interval defined by two measurements, a low and high limit.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>low</name>
+					<description>The lower bound of the interval.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>high</name>
+					<description>The upper bound of the interval.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>lowExcluded</name>
+					<description>Marker set to true if the lower bound itself is not part of the interval.
+					</description>
+					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>highExcluded</name>
+					<description>Marker set to true if the upper bound itself is not part of the interval.
+					</description>
+					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.SimpleMeasurementInterval</name>
+			<description>An interval extending MeasurementInterval with several primitive features
+				representing two measurements.</description>
+			<supertypeName>de.averbis.textanalysis.types.measurement.MeasurementInterval</supertypeName>
+			<features>
+				<featureDescription>
+					<name>lowNormalizedUnit</name>
+					<description>The normalized unit of the lower bound.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>lowNormalizedValue</name>
+					<description>The normalized value of the lower bound.</description>
+					<rangeTypeName>uima.cas.Double</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>lowNormalized</name>
+					<description>The normalized value combined with the normalized unit of the lower bound.
+					</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>lowParsedUnit</name>
+					<description>The parsed unit of the lower bound.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+
+				<featureDescription>
+					<name>highNormalizedUnit</name>
+					<description>The normalized unit of the upper bound.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>highNormalizedValue</name>
+					<description>The normalized value of the upper bound.</description>
+					<rangeTypeName>uima.cas.Double</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>highNormalized</name>
+					<description>The normalized value combined with the normalized unit of the upper bound.
+					</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>highParsedUnit</name>
+					<description>The parsed unit of the upper bound.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+
+			</features>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.RelativeMeasurementInterval</name>
+			<description>A relative interval defined by two measurements, a base and deflection.
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.measurement.MeasurementInterval</supertypeName>
+			<features>
+				<featureDescription>
+					<name>base</name>
+					<description>The base of the interval.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>deflection</name>
+					<description>The deflection of the interval.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.measurement.Measurement</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.IntervalIndicator</name>
+			<description>A textual representation indicating something an interval like '-' or 'bis'
+			</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.ComparisonIndicator</name>
+			<description>A textual representation of a comparison like '&lt;=' or 'unter', also able to
+				indicate an interval.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.GreaterIndicator</name>
+			<description>A textual representation indicating something is 'greater', also able to indicate an
+				interval.</description>
+			<supertypeName>de.averbis.textanalysis.types.measurement.ComparisonIndicator</supertypeName>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.LessIndicator</name>
+			<description>A textual representation indicating something is 'less', also able to indicate an
+				interval.</description>
+			<supertypeName>de.averbis.textanalysis.types.measurement.ComparisonIndicator</supertypeName>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.NoUnit</name>
+			<description>A textual position that is not a unit.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.DictionaryMeasurementMention</name>
+			<description>A textual representation indicating a measurement. This is a helper type for
+				measurements that combine numeric values and units or cause other problems for the unit parsing.
+			</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>value</name>
+					<description>Parseable value of the measurement.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>unit</name>
+					<description>Parseable unit of the measurement.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.measurement.UnitParseAnchor</name>
+			<description>Helper type to use as anchor for unit parsing.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+
+	</types>
 </typeSystemDescription>
