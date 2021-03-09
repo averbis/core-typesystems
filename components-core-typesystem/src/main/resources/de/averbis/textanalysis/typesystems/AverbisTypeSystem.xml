@@ -60,25 +60,6 @@
 					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
 				<featureDescription>
-					<name>concepts</name>
-					<description>List of concepts containing/covering this token (this feature is used for indexing
-						and highlighting with lucene/solr)</description>
-					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
-					<elementType>de.averbis.extraction.types.Concept</elementType>
-					<multipleReferencesAllowed>true</multipleReferencesAllowed>
-				</featureDescription>
-				<featureDescription>
-					<name>entities</name>
-					<description>Contains entities such as
-						Date,Time,Size,...
-						discovered inside the Token
-						(this feature is used for indexing and highlighting with lucene/solr)
-					</description>
-					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
-					<elementType>de.averbis.extraction.types.CoreAnnotation</elementType>
-					<multipleReferencesAllowed>true</multipleReferencesAllowed>
-				</featureDescription>
-				<featureDescription>
 					<name>ignoreByConceptMapper</name>
 					<description>If this feature is true then the ConceptAnnotator
 						ignores the token. Use this is a pre-processing
@@ -92,7 +73,6 @@
 					<name>normalized</name>
 					<description>Normalized version of this token (usually lower-case, without special characters
 						and number).
-						This feature is used for indexing/search with lucene/solr.
 					</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
@@ -100,7 +80,6 @@
 					<name>diacriticsFreeVersions</name>
 					<description>In the case that the normalized version contains diacritics, multiple versions
 						without diacritics are stored in this array.
-						This feature is used for indexing/search with lucene/solr.
 					</description>
 					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
 					<multipleReferencesAllowed>true</multipleReferencesAllowed>
