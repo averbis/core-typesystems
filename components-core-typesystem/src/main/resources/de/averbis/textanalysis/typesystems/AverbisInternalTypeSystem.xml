@@ -20,6 +20,11 @@
                     <description>Confidence value of the current annotation. E.g. in the case the annotation has been created by a statistical analysis engine.</description>
                     <rangeTypeName>uima.cas.Double</rangeTypeName>
                 </featureDescription>
+                <featureDescription>
+                    <name>confidenceKind</name>
+                    <description>Additional information about the specific kind of confidence. This provides an option to indicate if the confidence feature is set at all.</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
             </features>
         </typeDescription>
     </types>
