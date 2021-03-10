@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<typeSystemDescription
-	xmlns="http://uima.apache.org/resourceSpecifier">
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
 	<name>de.averbis.textanalysis.typesystems.TextUtilTypeSystem</name>
 	<description>This type system contains types for representing text util annotations.
 	</description>
@@ -14,7 +13,8 @@
 		<!-- words -->
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.text.CWord</name>
-			<description>Annotation representing a capitalized word including complex words composed of multiple tokens.</description>
+			<description>Annotation representing a capitalized word including complex words composed of
+				multiple tokens.</description>
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 		</typeDescription>
 		
@@ -222,7 +222,8 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.text.InBrackets</name>
-			<description>Annotation representing a text span in brackets (excluding arrow brackets).</description>
+			<description>Annotation representing a text span in brackets (excluding arrow brackets).
+			</description>
 			<supertypeName>de.averbis.textanalysis.types.text.TextSpan</supertypeName>
 		</typeDescription>
 		<typeDescription>
