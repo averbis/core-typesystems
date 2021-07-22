@@ -62,8 +62,8 @@
 					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
-					<name>featureImportance</name>
-					<description>Optional information concerning the weight/importance of specific features.</description>
+					<name>featureImpacts</name>
+					<description>Optional information concerning the weight/importance/impact of specific features.</description>
 					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
 					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
@@ -99,15 +99,20 @@
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 			<features>
 				<featureDescription>
-					<name>sourceAnnotations</name>
+					<name>relatedAnnotations</name>
 					<description>Relevant source annotations.</description>
 					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
 					<elementType>uima.tcas.Annotation</elementType>
 					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
+				<featureDescription>
+					<name>featureImpacts</name>
+					<description>Relevant features for identifying this span.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
 			</features>
 		</typeDescription>
-		
 		
 	</types>
 </typeSystemDescription>
