@@ -114,5 +114,28 @@
 			</features>
 		</typeDescription>
 		
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.DisambiguationTarget</name>
+			<description>Representing a target of a disambiguation task..</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>annotation</name>
+					<description>The annotation that should be disambiguated.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>modelKey</name>
+					<description>Key of the disambiguation model.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>classification</name>
+					<description>The classification decision of the disambiguation.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.GenericClassification</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		
 	</types>
 </typeSystemDescription>
