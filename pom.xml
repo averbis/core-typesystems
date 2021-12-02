@@ -11,13 +11,13 @@
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>parent-pom-typesystems</artifactId>
-		<version>3.22.0</version>
+		<version>4.0.1</version>
 	</parent>
 
 	<packaging>pom</packaging>
 
 	<properties>
-		<uima-version>3.1.1</uima-version>
+		<uima-version>3.2.0</uima-version>
 	</properties>
 
 	<licenses>
