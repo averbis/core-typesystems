@@ -195,7 +195,7 @@
 
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.measurement.ComparisonIndicator</name>
-			<description>A textual representation of a comparison like '&lt;=' or 'unter', also able to
+			<description>A textual representation of a comparison, also able to
 				indicate an interval.</description>
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 		</typeDescription>
