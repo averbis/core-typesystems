@@ -194,14 +194,12 @@
 				</featureDescription>
 				<featureDescription>
 					<name>matchedTerm</name>
-					<description>The synonym of the concept which caused the match (in the
-						ConceptAnnotator-dictionary this is &lt;term label=xxx&gt;).</description>
+					<description>The synonym of the concept which caused the match.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
 					<name>matchedVariant</name>
-					<description>The variant of the synonym of the concept which caused the match (in the
-						ConceptAnnotator-dictionary this is &lt;variant label=xxx&gt;).
+					<description>The variant of the synonym of the concept which caused the match.
 						Note that one synonym (matchedTerm) can have several variants (i.e. spelling forms or mapping
 						forms).
 					</description>
@@ -240,7 +238,7 @@
 				<featureDescription>
 					<name>uniqueID</name>
 					<description>The unique concept id, including terminology name and concept ID
-						should look like this: &lt;terminologyName&gt;:&lt;conceptID&gt;.</description>
+						should look like this: 'terminologyName':'conceptID'.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
@@ -481,12 +479,7 @@
 				</featureDescription>
 				<featureDescription>
 					<name>predicate</name>
-					<description>The annotation representing the predicate of the relation
-						e.g.
-						BASF has integrated BAYER
-						--&gt; 'has integrated' is the predicate that is marked as ChunkVP
-						--&gt; use the feature 'value' to define the type of the relation
-						--&gt; value: acquisition</description>
+					<description>The annotation representing the predicate of the relation.</description>
 					<rangeTypeName>de.averbis.extraction.types.CoreAnnotation</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
