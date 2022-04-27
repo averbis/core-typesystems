@@ -431,6 +431,11 @@
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
+					<name>kind</name>
+					<description>Optional kind of segmentation for simultaneous representation of multiple segment layers.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
 					<name>isValidSegmentation</name>
 					<description>Indicates if the segmentation is valid (viz. could be completely matched against
 						the dictionary).</description>
