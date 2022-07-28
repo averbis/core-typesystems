@@ -1,38 +1,39 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<artifactId>measurement-typesystem</artifactId>
-	<name>${project.artifactId}</name>
-	<description>Type system for measurements</description>
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>core-typesystems</artifactId>
 		<version>4.4.0-SNAPSHOT</version>
 	</parent>
-	
+
+	<artifactId>measurement-typesystem</artifactId>
+	<packaging>bundle</packaging>
+
+	<description>Type system for measurements</description>
+
 	<dependencies>
-	
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
 			<version>${uima-version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>de.averbis.textanalysis</groupId>
 			<artifactId>numeric-value-typesystem</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>de.averbis.textanalysis</groupId>
 			<artifactId>components-core-typesystem</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -47,7 +48,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.uima</groupId>
 				<artifactId>jcasgen-maven-plugin</artifactId>
@@ -58,7 +59,7 @@
 						</goals>
 						<configuration>
 							<typeSystemIncludes>
-							    <typeSystemInclude>src/main/resources/de/averbis/textanalysis/typesystems/MeasurementTypeSystem.xml</typeSystemInclude>
+								<typeSystemInclude>src/main/resources/de/averbis/textanalysis/typesystems/MeasurementTypeSystem.xml</typeSystemInclude>
 							</typeSystemIncludes>
 							<limitToProject>true</limitToProject>
 						</configuration>
