@@ -16,6 +16,7 @@
 package de.averbis.extraction.types;
 
 import java.io.IOException;
+import java.lang.invoke.MethodHandles;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,35 +34,45 @@ public class CoreTypeSystemDescriptionProvider implements TypeSystemDescriptionP
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		String[] typeSystemDescriptionFiles = {
+		return loadTypeSystemDescriptions(
 				"/de/averbis/textanalysis/typesystems/AverbisInternalTypeSystem.xml",
-				"/de/averbis/textanalysis/typesystems/AverbisTypeSystem.xml" };
+				"/de/averbis/textanalysis/typesystems/AverbisTypeSystem.xml");
+	}
 
-		List<TypeSystemDescription> typeSystemDescriptions = new ArrayList<>();
-		for (String typeSystem : typeSystemDescriptionFiles) {
-			URL resource = getClass().getResource(typeSystem);
-			if (resource == null) {
-				UIMAFramework.getLogger().error(
-						"Unable to locate type system description as a resource [{}]", typeSystem);
-				continue;
+
+	public static List<TypeSystemDescription> loadTypeSystemDescriptions(
+			String... typeSystemDescriptionFiles) {
+
+		Class<?> thisClazz = MethodHandles.lookup().lookupClass();
+
+		ResourceManager resMgr = new ResourceManager_impl(thisClazz.getClassLoader());
+		try {
+			List<TypeSystemDescription> typeSystemDescriptions = new ArrayList<>();
+
+			for (String typeSystem : typeSystemDescriptionFiles) {
+				URL resource = thisClazz.getResource(typeSystem);
+				if (resource == null) {
+					UIMAFramework.getLogger().error(
+							"Unable to locate type system description as a resource [{}]",
+							typeSystem);
+					continue;
+				}
+
+				try {
+					TypeSystemDescription tsd = UIMAFramework.getXMLParser()
+							.parseTypeSystemDescription(new XMLInputSource(resource));
+					tsd.resolveImports(resMgr);
+					typeSystemDescriptions.add(tsd);
+				} catch (InvalidXMLException | IOException e) {
+					UIMAFramework.getLogger().error(
+							"Error loading type system description [{}] from [{}]", typeSystem,
+							resource, e);
+				}
 			}
 
-			ResourceManager resMgr = new ResourceManager_impl(getClass().getClassLoader());
-
-			try {
-				TypeSystemDescription tsd = UIMAFramework.getXMLParser()
-						.parseTypeSystemDescription(new XMLInputSource(resource));
-				tsd.resolveImports(resMgr);
-				typeSystemDescriptions.add(tsd);
-			} catch (InvalidXMLException | IOException e) {
-				UIMAFramework.getLogger().error(
-						"Error loading type system description [{}] from [{}]", typeSystem,
-						resource, e);
-			}
-
+			return typeSystemDescriptions;
+		} finally {
 			resMgr.destroy();
 		}
-
-		return typeSystemDescriptions;
 	}
 }
