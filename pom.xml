@@ -41,6 +41,19 @@
 		<url>https://github.com/averbis/core-typesystems</url>
 		<tag>HEAD</tag>
 	</scm>
+	
+	<repositories>
+		<repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/averbis/parent-pom-typesystems</url>
+        <releases>
+           <enabled>false</enabled>
+        </releases>
+        <snapshots>
+          <enabled>true</enabled>
+       </snapshots>
+     </repository>
+	</repositories>
 
 	<modules>
 		<module>components-core-typesystem</module>
