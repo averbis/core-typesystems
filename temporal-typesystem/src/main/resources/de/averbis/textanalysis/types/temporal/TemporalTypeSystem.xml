@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.TemporalTypeSystem</name>
+	<description>This type system contains types for representing temporal
+		expressions and values.
+	</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.extraction.types.AverbisInternalTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.Timex3</name>
+			<description>Represents a text span which can be interpreted as a
+				numeric value which is stored in
+				a feature.
+			</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation
+			</supertypeName>
+			<features>
+				<featureDescription>
+					<name>tid</name>
+					<description>Non-optional attribute. Each TIMEX3 expression has to
+						be identified by a unique ID
+						number. This is automatically
+						assigned by the annotation tool.
+					</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>kind</name>
+					<description>Non-optional attribute. Each TIMEX3 is assigned one of
+						the following types: DATE,
+						TIME, DURATION, or SET. The format of
+						the value attribute is determined by the type of TIMEX3.
+						For
+						instance, a DURATION must have a value that begins with the letter
+						’P’ since durations
+						represent a period of time. This will be
+						elaborated on below in the value section. In addition,
+						some
+						optional attributes are used specifically with certain types of
+						temporal expressions.
+					</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>value</name>
+					<description>The value attribute details which temporal information
+						is contained in the TIMEX3.
+						This value is given in an extended ISO
+						8601 format. Examples: T24:00, 2001-01-12TEV,
+						1984-01-03T12:00,
+						XXXX-12-02,1964-SU, P4M, PT20M
+					</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>temporalFunction</name>
+					<description>Binary attribute which expresses that the value of the
+						temporal expression needs to
+						be determined via evaluation of a
+						temporal function.
+					</description>
+					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>anchor</name>
+					<description>Optional attribute. It introduces the annotation of
+						the temporal expression to
+						which the TIMEX3 in question is
+						temporally anchored.
+					</description>
+					<rangeTypeName>de.averbis.textanalysis.types.temporal.Timex3</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.Date</name>
+			<description>The expression describes a calendar time.</description>
+			<supertypeName>de.averbis.textanalysis.types.temporal.Timex3</supertypeName>
+			<features>
+				<featureDescription>
+					<name>day</name>
+					<description>The day of the actual date.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>month</name>
+					<description>The month of the actual date.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>year</name>
+					<description>The year of the actual date.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.Time</name>
+			<description>The expression refers to a time of the day, even if in a
+				very indefinite way.
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.temporal.Timex3
+			</supertypeName>
+			<features>
+				<featureDescription>
+					<name>hour</name>
+					<description>The hour of the actual time.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>minute</name>
+					<description>The minute of the actual time.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>second</name>
+					<description>The second of the actual time.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.Duration</name>
+			<description>The expression describes a duration. This value is
+				assigned to explicit durations.
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.temporal.Timex3
+			</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.TemporalSet</name>
+			<description>The expression describes a set of times.</description>
+			<supertypeName>de.averbis.textanalysis.types.temporal.Timex3</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.DocumentDate</name>
+			<description>Annotation representing the date and time presenting the
+				document if available, e.g.,
+				the creation time.
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.temporal.Timex3</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.WeekDay</name>
+			<description>Annotation indicating a weekday e.g., 'Monday'.</description>
+			<supertypeName>uima.tcas.Annotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>dayOfWeek</name>
+					<description>Number of the day, e.g., 1 for Monday</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.DayTime</name>
+			<description>Annotation indicating a time of day e.g., 'in the
+				morning'.
+			</description>
+			<supertypeName>uima.tcas.Annotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>timeOfDay</name>
+					<description>Number specifying the time of the day.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.TemporalIntervalBeginIndicator</name>
+			<description>Indicator for a possible begin of a temporal interval.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.TemporalIntervalEndIndicator</name>
+			<description>Indicator for a possible end of a temporal interval.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.UnambiguousTimex</name>
+			<description>Helper annotation type pointing to an most likely
+				unambiguous temporal expression.
+				The term '1992' could represent
+				a year, but also a measurement with that value. Other text spans like
+				'1.1.2015' are most likely
+				unambiguous dates, which can be represented
+				by this type.
+			</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>timex</name>
+					<description>The actual temporal expression.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.temporal.Timex3</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.temporal.DateInterval</name>
+			<description>The expression describes an interval(or set) of dates defined
+				by the start and end date of an event.
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.temporal.TemporalSet</supertypeName>
+			<features>
+				<featureDescription>
+					<name>startDate</name>
+					<description>The start date of the temporal interval.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.temporal.Date</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>endDate</name>
+					<description>The end date of the temporal interval.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.temporal.Date</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>

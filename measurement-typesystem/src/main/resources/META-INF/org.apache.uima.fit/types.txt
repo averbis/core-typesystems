@@ -1,1 +1,1 @@
-classpath*:de/averbis/textanalysis/typesystems/MeasurementTypeSystem.xml
+classpath*:de/averbis/textanalysis/types/measurement/MeasurementTypeSystem.xml

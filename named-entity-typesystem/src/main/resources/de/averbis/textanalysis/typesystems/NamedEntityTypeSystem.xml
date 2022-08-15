@@ -6,49 +6,6 @@
 	<version>${project.version}</version>
 	<vendor>Averbis GmbH</vendor>
 	<imports>
-		<import name="de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem" />
-		<import name="de.averbis.textanalysis.typesystems.AverbisTypeSystem" />
+		<import name="de.averbis.textanalysis.types.NamedEntityTypeSystem" />
 	</imports>
-	<types>
-		<!-- name -->
-		<typeDescription>
-			<name>de.averbis.textanalysis.types.AbstractName</name>
-			<description>The name of a person.</description>
-			<supertypeName>de.averbis.extraction.types.Entity</supertypeName>
-			<features>
-				<featureDescription>
-					<name>reference</name>
-					<description>Textual reference of the name.</description>
-					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
-				</featureDescription>
-			</features>
-		</typeDescription>
-		<typeDescription>
-			<name>de.averbis.textanalysis.types.PersonName</name>
-			<description>The name of a person.</description>
-			<supertypeName>de.averbis.textanalysis.types.AbstractName</supertypeName>
-			<features>
-				<featureDescription>
-					<name>firstName</name>
-					<description>Person's first name.</description>
-					<rangeTypeName>de.averbis.textanalysis.types.FirstName</rangeTypeName>
-				</featureDescription>
-				<featureDescription>
-					<name>lastName</name>
-					<description>Person's last name.</description>
-					<rangeTypeName>de.averbis.textanalysis.types.LastName</rangeTypeName>
-				</featureDescription>
-			</features>
-		</typeDescription>
-		<typeDescription>
-			<name>de.averbis.textanalysis.types.FirstName</name>
-			<description>The first name.</description>
-			<supertypeName>de.averbis.textanalysis.types.AbstractName</supertypeName>
-		</typeDescription>
-		<typeDescription>
-			<name>de.averbis.textanalysis.types.LastName</name>
-			<description>The last name.</description>
-			<supertypeName>de.averbis.textanalysis.types.AbstractName</supertypeName>
-		</typeDescription>
-	</types>
 </typeSystemDescription>
