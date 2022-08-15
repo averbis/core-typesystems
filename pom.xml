@@ -42,6 +42,18 @@
 		<tag>HEAD</tag>
 	</scm>
 	
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+		<snapshotRepository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/averbis/core-typesystems</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<repositories>
 		<repository>
         <id>github</id>
