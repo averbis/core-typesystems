@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
@@ -41,7 +43,7 @@
 		<url>https://github.com/averbis/core-typesystems</url>
 		<tag>HEAD</tag>
 	</scm>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>ossrh</id>
@@ -53,18 +55,28 @@
 			<url>https://maven.pkg.github.com/averbis/core-typesystems</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
+
 	<repositories>
 		<repository>
-        <id>github</id>
-        <url>https://maven.pkg.github.com/averbis/parent-pom-typesystems</url>
-        <releases>
-           <enabled>false</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-       </snapshots>
-     </repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/averbis/parent-pom-typesystems</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<modules>
