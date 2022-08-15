@@ -1,23 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>de.averbis.textanalysis</groupId>
+		<artifactId>parent-pom-typesystems</artifactId>
+		<version>4.1.0-SNAPSHOT</version>
+	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>core-typesystems</artifactId>
 	<version>4.4.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
 	<description>The UIMA type systems of the Averbis core components</description>
 	<url>https://github.com/averbis/core-typesystems</url>
 
-	<parent>
-		<groupId>de.averbis.textanalysis</groupId>
-		<artifactId>parent-pom-typesystems</artifactId>
-		<version>4.0.1</version>
-	</parent>
-
-	<packaging>pom</packaging>
-
 	<properties>
-		<uima-version>3.2.0</uima-version>
+		<uima-version>3.4.0-SNAPSHOT</uima-version>
 	</properties>
 
 	<licenses>
@@ -42,6 +43,55 @@
 		<url>https://github.com/averbis/core-typesystems</url>
 		<tag>HEAD</tag>
 	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+		<snapshotRepository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/averbis/core-typesystems</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/averbis/parent-pom-typesystems</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
 
 	<modules>
 		<module>components-core-typesystem</module>
