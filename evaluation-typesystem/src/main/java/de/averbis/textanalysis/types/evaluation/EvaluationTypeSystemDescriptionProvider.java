@@ -27,7 +27,6 @@ public class EvaluationTypeSystemDescriptionProvider implements TypeSystemDescri
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/EvaluationTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "EvaluationTypeSystem.xml");
 	}
 }

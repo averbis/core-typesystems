@@ -27,7 +27,6 @@ public class NamedEntityTypeSystemDescriptionProvider implements TypeSystemDescr
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/NamedEntityTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "NamedEntityTypeSystem.xml");
 	}
 }

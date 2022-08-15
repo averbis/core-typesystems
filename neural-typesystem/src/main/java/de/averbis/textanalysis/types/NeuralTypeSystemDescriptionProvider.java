@@ -27,7 +27,6 @@ public class NeuralTypeSystemDescriptionProvider implements TypeSystemDescriptio
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/NeuralTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "NeuralTypeSystem.xml");
 	}
 }
