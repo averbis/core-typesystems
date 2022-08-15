@@ -19,6 +19,7 @@
 
 	<properties>
 		<uima-version>3.4.0-SNAPSHOT</uima-version>
+		<junit-jupiter-version>5.9.0</junit-jupiter-version>
 	</properties>
 
 	<licenses>
