@@ -16,6 +16,8 @@ jobs:
       with:
         java-version: ${{ matrix.java-version }}
     - run: mvn -B install --no-transfer-progress --file pom.xml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-snapshot:
     needs: build
