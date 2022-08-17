@@ -1,25 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>evaluation-typesystem</artifactId>
-	<name>${project.artifactId}</name>
-	<description>The type system of evaluation components</description>
-
-    <parent>
+	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>core-typesystems</artifactId>
 		<version>4.4.0-SNAPSHOT</version>
 	</parent>
-	
+
+	<artifactId>evaluation-typesystem</artifactId>
+	<packaging>bundle</packaging>
+
+	<description>The type system of evaluation components</description>
+
 	<dependencies>
-	
 		<dependency>
 			<groupId>de.averbis.textanalysis</groupId>
 			<artifactId>components-core-typesystem</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
@@ -31,43 +33,22 @@
 			<artifactId>uimaj-document-annotation</artifactId>
 			<version>${uima-version}</version>
 		</dependency>
-		
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>xml-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.uima</groupId>
-				<artifactId>jcasgen-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<typeSystemIncludes>
-								<include>src/main/resources/de/averbis/textanalysis/typesystems/EvaluationTypeSystem.xml</include>
-							</typeSystemIncludes>
-						<limitToProject>true</limitToProject>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Import-Package>
+							de.averbis.extraction.types,
+							*
+						</Import-Package>
+					</instructions>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	
 </project>

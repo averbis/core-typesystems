@@ -27,7 +27,6 @@ public class TextTypeSystemDescriptionProvider implements TypeSystemDescriptionP
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/TextTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "TextTypeSystem.xml");
 	}
 }

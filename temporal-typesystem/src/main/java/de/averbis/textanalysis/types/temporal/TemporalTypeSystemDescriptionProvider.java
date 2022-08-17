@@ -27,7 +27,6 @@ public class TemporalTypeSystemDescriptionProvider implements TypeSystemDescript
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/TemporalTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "TemporalTypeSystem.xml");
 	}
 }

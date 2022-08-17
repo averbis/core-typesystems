@@ -27,7 +27,6 @@ public class MeasurementTypeSystemDescriptionProvider implements TypeSystemDescr
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/MeasurementTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "MeasurementTypeSystem.xml");
 	}
 }

@@ -27,7 +27,6 @@ public class NumericValueTypeSystemDescriptionProvider implements TypeSystemDesc
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(
-				"/de/averbis/textanalysis/typesystems/NumericValueTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "NumericValueTypeSystem.xml");
 	}
 }
