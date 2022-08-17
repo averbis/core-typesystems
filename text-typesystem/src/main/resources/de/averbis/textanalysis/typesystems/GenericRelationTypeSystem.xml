@@ -6,6 +6,6 @@
 	<version>${project.version}</version>
 	<vendor>Averbis GmbH</vendor>
 	<imports>
-		<import name="de.averbis.textanalysis.types.text.GenericRelationTypeSystem" />
+		<import name="de.averbis.textanalysis.types.GenericRelationTypeSystem" />
 	</imports>
 </typeSystemDescription>

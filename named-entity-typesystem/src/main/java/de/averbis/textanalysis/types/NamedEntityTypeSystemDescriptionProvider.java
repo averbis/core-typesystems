@@ -27,6 +27,7 @@ public class NamedEntityTypeSystemDescriptionProvider implements TypeSystemDescr
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(getClass(), "NamedEntityTypeSystem.xml");
+		return loadTypeSystemDescriptions(getClass(), "NamedEntityTypeSystem.xml",
+				"GenericRelationTypeSystem.xml", "NeuralTypeSystem.xml");
 	}
 }
