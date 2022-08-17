@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.AverbisInternalTypeSystem</name>
+	<description>A type system for internal types not representing specific information.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<types>
+		<typeDescription>
+			<name>de.averbis.extraction.types.CoreAnnotation</name>
+			<description>The base type for all annotation types providing a componentId and confidence.
+			</description>
+			<supertypeName>uima.tcas.Annotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>componentId</name>
+					<description>The id/name of the component that created this annotation.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>confidence</name>
+					<description>Confidence value of the current annotation. E.g. in the case the annotation has
+						been created by a statistical analysis engine.</description>
+					<rangeTypeName>uima.cas.Double</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>confidenceKind</name>
+					<description>Additional information about the specific kind of confidence. This provides an
+						option to indicate if the confidence feature is set at all.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>

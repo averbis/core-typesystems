@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.GenericRelationTypeSystem</name>
+	<description>This type system contains types for representing generic relations.
+	</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.extraction.types.AverbisInternalTypeSystem" />
+		<import name="de.averbis.extraction.types.AverbisTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.AnnotationScope</name>
+			<description>Scope of a cue annotation.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Optional label indicating the kind of scope.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>cue</name>
+					<description>The cue indicating the scope.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.GenericCue</name>
+			<description>A generic cue.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>label</name>
+					<description>Optional label indicating the kind of cue.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.GenericClassification</name>
+			<description>A classification result.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>group</name>
+					<description>Group indicating the classification context.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>label</name>
+					<description>Label indicating the classification result.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>annotation</name>
+					<description>Optional reference to the classified annotation or category.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>featureImpacts</name>
+					<description>Optional information concerning the weight/importance/impact of specific features.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+				<featureDescription>
+					<name>relevantSpans</name>
+					<description>Optional information concerning the position of relevant spans.</description>
+					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+					<elementType>de.averbis.textanalysis.types.PredictionRelevantSpan</elementType>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+			</features>
+		</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.AnnotationClassification</name>
+			<description>General classification result on annotation level.</description>
+			<supertypeName>de.averbis.textanalysis.types.GenericClassification</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.DocumentClassification</name>
+			<description>General classification result on document level.</description>
+			<supertypeName>de.averbis.textanalysis.types.GenericClassification</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.RelationClassification</name>
+			<description>General classification result on annotation relation level.</description>
+			<supertypeName>de.averbis.textanalysis.types.GenericClassification</supertypeName>
+		</typeDescription>
+		
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.PredictionRelevantSpan</name>
+			<description>A span pointing to relevant annotations for a specific classification.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>relatedAnnotations</name>
+					<description>Relevant source annotations.</description>
+					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+					<elementType>uima.tcas.Annotation</elementType>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+				<featureDescription>
+					<name>featureImpacts</name>
+					<description>Relevant features for identifying this span.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.DisambiguationTarget</name>
+			<description>Representing a target of a disambiguation task..</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>annotation</name>
+					<description>The annotation that should be disambiguated.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>modelKey</name>
+					<description>Key of the disambiguation model.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>classification</name>
+					<description>The classification decision of the disambiguation.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.GenericClassification</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		
+	</types>
+</typeSystemDescription>

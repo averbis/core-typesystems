@@ -1,6 +1,10 @@
-name: build
+name: build-snapshot
 
-on: [push]
+on: 
+  push:
+    branches:
+      - 'main'
+      - 'release/**'
 
 jobs:
   build:

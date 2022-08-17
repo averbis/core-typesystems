@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.EvaluationTypeSystem</name>
+	<description>A type system containing types for evaluations.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.extraction.types.AverbisInternalTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.EvaluationAnnotation</name>
+			<description>Parent type for all evaluation types which is able to store a reference annotation.
+			</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>annotation</name>
+					<description>The corresponding annotation.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.FalsePositive</name>
+			<description>An annotation was found but should not have been found.</description>
+			<supertypeName>de.averbis.textanalysis.types.evaluation.EvaluationAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.FalseNegative</name>
+			<description>An annotation was not found but should have been found.</description>
+			<supertypeName>de.averbis.textanalysis.types.evaluation.EvaluationAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.TruePositive</name>
+			<description>A correct annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.evaluation.EvaluationAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.PartialPositive</name>
+			<description>A partially correct annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.evaluation.TruePositive</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.TrueNegative</name>
+			<description>A correctly missing annotation.</description>
+			<supertypeName>de.averbis.textanalysis.types.evaluation.EvaluationAnnotation</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.evaluation.SimilarityMatching</name>
+			<description>Various information of candidate matches for debugging purposes.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>candidate</name>
+					<description>The corresponding annotation.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>predicted</name>
+					<description>All predicted labels for candidate.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>
