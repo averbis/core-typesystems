@@ -24,6 +24,12 @@
 			<artifactId>components-core-typesystem</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>de.averbis.textanalysis</groupId>
+			<artifactId>named-entity-typesystem</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	
 	<build>

@@ -8,7 +8,7 @@
 	<imports>
 		<import name="de.averbis.extraction.types.AverbisTypeSystem" />
 		<import name="de.averbis.extraction.types.AverbisInternalTypeSystem" />
-		<import name="de.averbis.textanalysis.types.text.GenericRelationTypeSystem" />
+		<import name="de.averbis.textanalysis.types.GenericRelationTypeSystem" />
 		<import name="de.averbis.textanalysis.types.text.TextUtilTypeSystem" />
 	</imports>
 </typeSystemDescription>
