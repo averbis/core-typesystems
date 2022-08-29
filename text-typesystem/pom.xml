@@ -41,6 +41,7 @@
 					<instructions>
 						<Import-Package>
 							de.averbis.extraction.types,
+							de.averbis.textanalysis.types,
 							*
 						</Import-Package>
 					</instructions>
