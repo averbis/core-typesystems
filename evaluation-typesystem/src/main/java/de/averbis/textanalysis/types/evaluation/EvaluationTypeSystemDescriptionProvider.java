@@ -15,18 +15,45 @@
  */
 package de.averbis.textanalysis.types.evaluation;
 
-import static de.averbis.extraction.types.CoreTypeSystemDescriptionProvider.loadTypeSystemDescriptions;
+import static org.apache.uima.util.TypeSystemUtil.loadTypeSystemDescriptionsFromClasspath;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.resource.metadata.TypeDescription;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
+import org.apache.uima.spi.JCasClassProvider;
 import org.apache.uima.spi.TypeSystemDescriptionProvider;
 
-public class EvaluationTypeSystemDescriptionProvider implements TypeSystemDescriptionProvider {
+public class EvaluationTypeSystemDescriptionProvider
+		implements TypeSystemDescriptionProvider, JCasClassProvider {
 
 	@Override
 	public List<TypeSystemDescription> listTypeSystemDescriptions() {
 
-		return loadTypeSystemDescriptions(getClass(), "EvaluationTypeSystem.xml");
+		return loadTypeSystemDescriptionsFromClasspath(getClass(), "EvaluationTypeSystem.xml");
+	}
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Class<? extends TOP>> listJCasClasses() {
+
+		List<Class<? extends TOP>> classes = new ArrayList<>();
+		ClassLoader cl = getClass().getClassLoader();
+
+		List<TypeSystemDescription> typeSystemDescriptions = listTypeSystemDescriptions();
+		for (TypeSystemDescription tsd : typeSystemDescriptions) {
+			for (TypeDescription td : tsd.getTypes()) {
+				try {
+					classes.add((Class<? extends TOP>) cl.loadClass(td.getName()));
+				} catch (ClassNotFoundException e) {
+					// This is acceptable - there may not be a JCas class
+				}
+			}
+		}
+
+		return classes;
 	}
 }
