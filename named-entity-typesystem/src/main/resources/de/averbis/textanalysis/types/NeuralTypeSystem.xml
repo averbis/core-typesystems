@@ -43,6 +43,11 @@
 					<description>Index of wordpiece in the vocabulary.</description>
 					<rangeTypeName>uima.cas.Integer</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>group</name>
+					<description>Optional group identifier for distinguishing different layers of wordpieces.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
 			</features>
 		</typeDescription>
 
