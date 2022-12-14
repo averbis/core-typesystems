@@ -30,6 +30,13 @@
 			<artifactId>named-entity-typesystem</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+		<!-- TESTS -->
+		<dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimafit-core</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 	<build>
