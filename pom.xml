@@ -13,15 +13,15 @@
 	<version>4.4.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>${project.artifactId}</name>
+	<name>Averbis Core Type Systems</name>
 	<description>The UIMA type systems of the Averbis core components</description>
 	<url>https://github.com/averbis/core-typesystems</url>
 
 	<properties>
-		<uima-version>3.4.0-SNAPSHOT</uima-version>
-		<uimafit-version>3.4.0-SNAPSHOT</uimafit-version>
-		<junit-jupiter-version>5.9.1</junit-jupiter-version>
-		<assertj-version>3.23.1</assertj-version>
+		<uima-version>3.4.0</uima-version>
+		<uimafit-version>3.4.0</uimafit-version>
+		<junit-jupiter-version>5.9.2</junit-jupiter-version>
+		<assertj-version>3.24.2</assertj-version>
 		<slf4j-version>1.7.36</slf4j-version>
 	</properties>
 
