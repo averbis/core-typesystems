@@ -28,12 +28,6 @@
 			<version>${uima-version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.uima</groupId>
-			<artifactId>uimaj-document-annotation</artifactId>
-			<version>${uima-version}</version>
-		</dependency>
-
 		<!-- TESTS -->
 		<dependency>
 			<groupId>org.apache.uima</groupId>
