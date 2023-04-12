@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.SearchTypeSystem</name>
+	<description>This type system contains types for usage in search applications.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.textanalysis.types.search.SearchTypeSystem" />
+	</imports>
+</typeSystemDescription>
