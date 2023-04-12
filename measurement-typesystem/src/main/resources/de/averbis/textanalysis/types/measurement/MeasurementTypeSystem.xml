@@ -81,6 +81,11 @@
 					<description>The dimension of the unit in the form like '[L]^3' for volume</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>ucumCode</name>
+					<description>The optional UCUM code of the unit, a textual representation of the parsed unit in the UCUM system.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
 			</features>
 		</typeDescription>
 
