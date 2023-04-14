@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.SearchTypeSystem</name>
+	<description>This type system contains types for usage in search applications.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.extraction.types.AverbisInternalTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.search.SortKey</name>
+			<description>Abstract parent type for specific sort keys.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>name</name>
+					<description>The name of the sort key.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.search.StringSortKey</name>
+			<description>Key for sorting based on
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.search.SortKey</supertypeName>
+			<features>
+				<featureDescription>
+					<name>value</name>
+					<description>String value for sorting documents.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.search.DoubleSortKey</name>
+			<description>Key for sorting based on
+			</description>
+			<supertypeName>de.averbis.textanalysis.types.search.SortKey</supertypeName>
+			<features>
+				<featureDescription>
+					<name>value</name>
+					<description>Double value for sorting documents.</description>
+					<rangeTypeName>uima.cas.Double</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>

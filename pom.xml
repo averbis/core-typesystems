@@ -104,6 +104,7 @@
 		<module>named-entity-typesystem</module>
 		<module>neural-typesystem</module>
 		<module>text-typesystem</module>
+		<module>search-typesystem</module>
 	</modules>
 	
 	<dependencies>
