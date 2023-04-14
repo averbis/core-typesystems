@@ -19,6 +19,11 @@
 					<description>The corresponding annotation.</description>
 					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>reason</name>
+					<description>Optional reason for the comparison result, e.g., the name of the feature that caused a false positive outcome.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
 			</features>
 		</typeDescription>
 		<typeDescription>
