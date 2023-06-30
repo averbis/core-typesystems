@@ -16,9 +16,9 @@
 	<url>https://github.com/averbis/core-typesystems</url>
 
 	<properties>
-		<uima-version>3.4.0</uima-version>
+		<uima-version>3.4.1</uima-version>
 		<uimafit-version>3.4.0</uimafit-version>
-		<junit-jupiter-version>5.9.2</junit-jupiter-version>
+		<junit-jupiter-version>5.9.3</junit-jupiter-version>
 		<assertj-version>3.24.2</assertj-version>
 		<slf4j-version>1.7.36</slf4j-version>
 	</properties>
@@ -102,7 +102,6 @@
 		<module>measurement-typesystem</module>
 		<module>temporal-typesystem</module>
 		<module>named-entity-typesystem</module>
-		<module>neural-typesystem</module>
 		<module>text-typesystem</module>
 		<module>search-typesystem</module>
 	</modules>
@@ -157,7 +156,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M7</version>
+				<version>3.1.2</version>
 				<dependencies>
 					<dependency>
 						<groupId>org.junit.jupiter</groupId>
