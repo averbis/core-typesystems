@@ -29,31 +29,41 @@ import org.apache.uima.spi.TypeSystemDescriptionProvider;
 public class NumericValueTypeSystemDescriptionProvider
 		implements TypeSystemDescriptionProvider, JCasClassProvider {
 
-	@Override
-	public List<TypeSystemDescription> listTypeSystemDescriptions() {
+	private List<TypeSystemDescription> typeSystemDescriptions;
+	private List<Class<? extends TOP>> jCasClasses;
 
-		return loadTypeSystemDescriptionsFromClasspath(getClass(), "NumericValueTypeSystem.xml");
+
+	@Override
+	public synchronized List<TypeSystemDescription> listTypeSystemDescriptions() {
+
+		if (typeSystemDescriptions == null) {
+			typeSystemDescriptions = loadTypeSystemDescriptionsFromClasspath(getClass(), //
+					"NumericValueTypeSystem.xml");
+		}
+		return typeSystemDescriptions;
 	}
 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Class<? extends TOP>> listJCasClasses() {
+	public synchronized List<Class<? extends TOP>> listJCasClasses() {
 
-		List<Class<? extends TOP>> classes = new ArrayList<>();
-		ClassLoader cl = getClass().getClassLoader();
+		if (jCasClasses == null) {
+			List<Class<? extends TOP>> classes = new ArrayList<>();
+			ClassLoader cl = getClass().getClassLoader();
 
-		List<TypeSystemDescription> typeSystemDescriptions = listTypeSystemDescriptions();
-		for (TypeSystemDescription tsd : typeSystemDescriptions) {
-			for (TypeDescription td : tsd.getTypes()) {
-				try {
-					classes.add((Class<? extends TOP>) cl.loadClass(td.getName()));
-				} catch (ClassNotFoundException e) {
-					// This is acceptable - there may not be a JCas class
+			for (TypeSystemDescription tsd : listTypeSystemDescriptions()) {
+				for (TypeDescription td : tsd.getTypes()) {
+					try {
+						classes.add((Class<? extends TOP>) cl.loadClass(td.getName()));
+					} catch (ClassNotFoundException e) {
+						// This is acceptable - there may not be a JCas class
+					}
 				}
 			}
+			jCasClasses = classes;
 		}
 
-		return classes;
+		return jCasClasses;
 	}
 }
