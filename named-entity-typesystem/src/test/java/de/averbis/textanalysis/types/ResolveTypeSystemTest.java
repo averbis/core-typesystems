@@ -25,7 +25,8 @@ class ResolveTypeSystemTest {
 
 	@Test
 	void thatTypeSystemCanBeAutoDetectedAndResolved() throws Exception {
+
 		TypeSystemDescription tsd = TypeSystemDescriptionFactory.createTypeSystemDescription();
-		assertThat(tsd.getTypes()).hasSize(65);
+		assertThat(tsd.getTypes()).hasSize(66);
 	}
 }
