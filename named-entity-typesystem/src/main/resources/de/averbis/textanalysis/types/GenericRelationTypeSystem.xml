@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
 	<name>de.averbis.textanalysis.typesystems.GenericRelationTypeSystem</name>
-	<description>This type system contains types for representing generic relations.
-	</description>
+	<description>This type system contains types for representing generic relations.</description>
 	<version>${project.version}</version>
 	<vendor>Averbis GmbH</vendor>
 	<imports>
@@ -39,8 +38,6 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
-
-
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.GenericClassification</name>
 			<description>A classification result.</description>
@@ -76,7 +73,6 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
-
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.AnnotationClassification</name>
 			<description>General classification result on annotation level.</description>
@@ -92,7 +88,6 @@
 			<description>General classification result on annotation relation level.</description>
 			<supertypeName>de.averbis.textanalysis.types.GenericClassification</supertypeName>
 		</typeDescription>
-		
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.PredictionRelevantSpan</name>
 			<description>A span pointing to relevant annotations for a specific classification.</description>
@@ -113,10 +108,9 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
-		
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.DisambiguationTarget</name>
-			<description>Representing a target of a disambiguation task..</description>
+			<description>Representing a target of a disambiguation task.</description>
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 			<features>
 				<featureDescription>
@@ -136,6 +130,42 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
-		
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.TerminologyLinking</name>
+			<description>Annotations of this type represent a linking process of an annotation to a term or concept of a terminology. 
+			  This terminology linking process is often also called code normalization.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>annotation</name>
+					<description>The annotation that should be linked to a terminology.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>candidates</name>
+					<description>List of concepts that provide a link to a terminology.</description>
+					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+					<elementType>de.averbis.extraction.types.Concept</elementType>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+				<featureDescription>
+					<name>results</name>
+					<description>Subset of candidate concepts in a potentially refined order.</description>
+					<rangeTypeName>uima.cas.FSArray</rangeTypeName>
+					<elementType>de.averbis.extraction.types.Concept</elementType>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
+				<featureDescription>
+					<name>group</name>
+					<description>Group for identifying the corresponding terminology linking process.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>summary</name>
+					<description>Optional debug summary with an overview of the candidates and results.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
 	</types>
 </typeSystemDescription>
