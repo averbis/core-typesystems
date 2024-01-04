@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>core-typesystems</artifactId>
-		<version>4.7.0</version>
+		<version>4.8.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>measurement-typesystem</artifactId>
