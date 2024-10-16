@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -80,7 +82,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>apache-snapshots</id>
@@ -93,7 +95,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
+
 
 	<modules>
 		<module>components-core-typesystem</module>
@@ -104,9 +106,14 @@
 		<module>named-entity-typesystem</module>
 		<module>text-typesystem</module>
 		<module>search-typesystem</module>
+		<module>core-typesystems-bom</module>
 	</modules>
-	
+
 	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.annotation</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>biz.aQute.bnd</groupId>
 			<artifactId>biz.aQute.bnd.annotation</artifactId>
@@ -158,6 +165,11 @@
 				<version>${slf4j-version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>osgi.annotation</artifactId>
+				<version>8.1.0</version>
 			</dependency>
 			<dependency>
 				<groupId>biz.aQute.bnd</groupId>

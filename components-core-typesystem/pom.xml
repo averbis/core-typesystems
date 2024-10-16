@@ -8,7 +8,6 @@
 	</parent>
 
 	<artifactId>components-core-typesystem</artifactId>
-	<packaging>bundle</packaging>
 
 	<description>The type system of the core components</description>
 
@@ -16,7 +15,6 @@
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
-			<version>${uima-version}</version>
 		</dependency>
 
 		<!-- TESTS -->
