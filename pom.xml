@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>parent-pom-typesystems</artifactId>
-		<version>4.1.0</version>
+		<version>4.2.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>core-typesystems</artifactId>
@@ -16,11 +18,11 @@
 	<url>https://github.com/averbis/core-typesystems</url>
 
 	<properties>
-		<uima-version>3.4.1</uima-version>
-		<uimafit-version>3.4.0</uimafit-version>
-		<junit-jupiter-version>5.9.3</junit-jupiter-version>
+		<bnd-annotation-version>7.0.0</bnd-annotation-version>
+		<uima-version>3.6.0-SNAPSHOT</uima-version>
+		<junit-jupiter-version>5.11.1</junit-jupiter-version>
 		<assertj-version>3.24.2</assertj-version>
-		<slf4j-version>1.7.36</slf4j-version>
+		<slf4j-version>2.0.16</slf4j-version>
 	</properties>
 
 	<licenses>
@@ -80,7 +82,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>apache-snapshots</id>
@@ -93,7 +95,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
+
 
 	<modules>
 		<module>components-core-typesystem</module>
@@ -104,9 +106,19 @@
 		<module>named-entity-typesystem</module>
 		<module>text-typesystem</module>
 		<module>search-typesystem</module>
+		<module>core-typesystems-bom</module>
 	</modules>
-	
+
 	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.annotation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>biz.aQute.bnd</groupId>
+			<artifactId>biz.aQute.bnd.annotation</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
@@ -135,18 +147,34 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.uima</groupId>
-				<artifactId>uimafit-core</artifactId>
-				<version>${uimafit-version}</version>
+				<artifactId>uimaj-bom</artifactId>
+				<version>${uima-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.assertj</groupId>
-				<artifactId>assertj-core</artifactId>
+				<artifactId>assertj-bom</artifactId>
 				<version>${assertj-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-simple</artifactId>
+				<artifactId>slf4j-bom</artifactId>
 				<version>${slf4j-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>osgi.annotation</artifactId>
+				<version>8.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>biz.aQute.bnd.annotation</artifactId>
+				<version>${bnd-annotation-version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -156,7 +184,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version>
 				<dependencies>
 					<dependency>
 						<groupId>org.junit.jupiter</groupId>
