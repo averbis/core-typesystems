@@ -17,15 +17,29 @@ package de.averbis.textanalysis.types.evaluation;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.stream.Stream;
+
+import org.apache.uima.UIMAFramework;
 import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
-import org.apache.uima.resource.metadata.TypeSystemDescription;
+import org.apache.uima.resource.metadata.TypeDescription;
+import org.apache.uima.util.XMLInputSource;
 import org.junit.jupiter.api.Test;
 
 class ResolveTypeSystemTest {
 
 	@Test
 	void thatTypeSystemCanBeAutoDetectedAndResolved() throws Exception {
-		TypeSystemDescription tsd = TypeSystemDescriptionFactory.createTypeSystemDescription();
-		assertThat(tsd.getTypes()).hasSize(52);
+
+		var expectedTsd = UIMAFramework.getXMLParser()
+				.parseTypeSystemDescription(
+						new XMLInputSource(getClass().getResource("EvaluationTypeSystem.xml")));
+
+		var detectedTsd = TypeSystemDescriptionFactory.createTypeSystemDescription();
+
+		assertThat(detectedTsd.getTypes()) //
+				.extracting(TypeDescription::getName).containsAll(
+						Stream.of(expectedTsd.getTypes()).map(TypeDescription::getName).toList());
+
+		assertThat(detectedTsd.getTypes()).hasSize(52);
 	}
 }

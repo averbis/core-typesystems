@@ -15,55 +15,20 @@
  */
 package de.averbis.textanalysis.types.text;
 
-import static org.apache.uima.util.TypeSystemUtil.loadTypeSystemDescriptionsFromClasspath;
+import static aQute.bnd.annotation.Resolution.OPTIONAL;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.uima.spi.TypeSystemProvider;
+import org.apache.uima.spi.TypeSystemProvider_ImplBase;
 
-import org.apache.uima.jcas.cas.TOP;
-import org.apache.uima.resource.metadata.TypeDescription;
-import org.apache.uima.resource.metadata.TypeSystemDescription;
-import org.apache.uima.spi.JCasClassProvider;
-import org.apache.uima.spi.TypeSystemDescriptionProvider;
+import aQute.bnd.annotation.spi.ServiceProvider;
 
-public class TextTypeSystemDescriptionProvider
-		implements TypeSystemDescriptionProvider, JCasClassProvider {
+@ServiceProvider(value = TypeSystemProvider.class, resolution = OPTIONAL)
+public class TextTypeSystemDescriptionProvider extends TypeSystemProvider_ImplBase {
 
-	private List<TypeSystemDescription> typeSystemDescriptions;
-	private List<Class<? extends TOP>> jCasClasses;
+	public TextTypeSystemDescriptionProvider() {
 
-
-	@Override
-	public synchronized List<TypeSystemDescription> listTypeSystemDescriptions() {
-
-		if (typeSystemDescriptions == null) {
-			typeSystemDescriptions = loadTypeSystemDescriptionsFromClasspath(getClass(), //
-					"TextTypeSystem.xml");
-		}
-		return typeSystemDescriptions;
-	}
-
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public synchronized List<Class<? extends TOP>> listJCasClasses() {
-
-		if (jCasClasses == null) {
-			List<Class<? extends TOP>> classes = new ArrayList<>();
-			ClassLoader cl = getClass().getClassLoader();
-
-			for (TypeSystemDescription tsd : listTypeSystemDescriptions()) {
-				for (TypeDescription td : tsd.getTypes()) {
-					try {
-						classes.add((Class<? extends TOP>) cl.loadClass(td.getName()));
-					} catch (ClassNotFoundException e) {
-						// This is acceptable - there may not be a JCas class
-					}
-				}
-			}
-			jCasClasses = classes;
-		}
-
-		return jCasClasses;
+		setTypeSystemLocations(//
+				"TextTypeSystem.xml", //
+				"TextUtilTypeSystem.xml");
 	}
 }

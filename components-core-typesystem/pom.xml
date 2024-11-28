@@ -3,12 +3,12 @@
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
-		<artifactId>core-typesystems</artifactId>
+		<artifactId>core-typesystems-parent</artifactId>
 		<version>4.8.0-SNAPSHOT</version>
+		<relativePath>../core-typesystems-parent</relativePath>
 	</parent>
 
 	<artifactId>components-core-typesystem</artifactId>
-	<packaging>bundle</packaging>
 
 	<description>The type system of the core components</description>
 
@@ -16,7 +16,6 @@
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
-			<version>${uima-version}</version>
 		</dependency>
 
 		<!-- TESTS -->

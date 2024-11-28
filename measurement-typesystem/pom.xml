@@ -3,12 +3,12 @@
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
-		<artifactId>core-typesystems</artifactId>
+		<artifactId>core-typesystems-parent</artifactId>
 		<version>4.8.0-SNAPSHOT</version>
+		<relativePath>../core-typesystems-parent</relativePath>
 	</parent>
 
 	<artifactId>measurement-typesystem</artifactId>
-	<packaging>bundle</packaging>
 
 	<description>Type system for measurements</description>
 
@@ -16,7 +16,6 @@
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
-			<version>${uima-version}</version>
 		</dependency>
 
 		<dependency>
@@ -38,22 +37,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<Import-Package>
-							de.averbis.extraction.types,
-							de.averbis.textanalysis.types.numericvalue,
-							*
-						</Import-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

@@ -3,21 +3,19 @@
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
-		<artifactId>core-typesystems</artifactId>
+		<artifactId>core-typesystems-parent</artifactId>
 		<version>4.8.0-SNAPSHOT</version>
+		<relativePath>../core-typesystems-parent</relativePath>
 	</parent>
 
 	<artifactId>search-typesystem</artifactId>
-	<packaging>bundle</packaging>
 
 	<description>Type system for search-based applications.</description>
 	
 	<dependencies>
-	
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
-			<version>${uima-version}</version>
 		</dependency>
 		
 		<dependency>
@@ -33,21 +31,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<Import-Package>
-							de.averbis.extraction.types,
-							*
-						</Import-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

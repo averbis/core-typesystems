@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>parent-pom-typesystems</artifactId>
-		<version>4.1.0</version>
+		<version>4.2.0</version>
 	</parent>
 
 	<artifactId>core-typesystems</artifactId>
@@ -14,14 +16,6 @@
 	<name>Averbis Core Type Systems</name>
 	<description>The UIMA type systems of the Averbis core components</description>
 	<url>https://github.com/averbis/core-typesystems</url>
-
-	<properties>
-		<uima-version>3.4.1</uima-version>
-		<uimafit-version>3.4.0</uimafit-version>
-		<junit-jupiter-version>5.9.3</junit-jupiter-version>
-		<assertj-version>3.24.2</assertj-version>
-		<slf4j-version>1.7.36</slf4j-version>
-	</properties>
 
 	<licenses>
 		<license>
@@ -69,6 +63,8 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<!--
+			- For UIMA SNAPSHOT versions
 		<repository>
 			<id>apache-snapshots</id>
 			<url>https://repository.apache.org/content/repositories/snapshots</url>
@@ -79,9 +75,12 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		-->
 	</repositories>
-	
+
 	<pluginRepositories>
+		<!--
+			- For UIMA SNAPSHOT versions
 		<pluginRepository>
 			<id>apache-snapshots</id>
 			<url>https://repository.apache.org/content/repositories/snapshots</url>
@@ -92,10 +91,11 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
+		-->
 	</pluginRepositories>
-	
 
 	<modules>
+		<module>core-typesystems-parent</module>
 		<module>components-core-typesystem</module>
 		<module>evaluation-typesystem</module>
 		<module>numeric-value-typesystem</module>
@@ -104,67 +104,6 @@
 		<module>named-entity-typesystem</module>
 		<module>text-typesystem</module>
 		<module>search-typesystem</module>
+		<module>core-typesystems-bom</module>
 	</modules>
-	
-	<dependencies>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.junit</groupId>
-				<artifactId>junit-bom</artifactId>
-				<version>${junit-jupiter-version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.uima</groupId>
-				<artifactId>uimafit-core</artifactId>
-				<version>${uimafit-version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.assertj</groupId>
-				<artifactId>assertj-core</artifactId>
-				<version>${assertj-version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-simple</artifactId>
-				<version>${slf4j-version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.junit.jupiter</groupId>
-						<artifactId>junit-jupiter-engine</artifactId>
-						<version>${junit-jupiter-version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
 </project>
