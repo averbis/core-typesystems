@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>parent-pom-typesystems</artifactId>
-		<version>4.2.0</version>
+		<version>4.2.1</version>
 	</parent>
 
 	<artifactId>core-typesystems</artifactId>
