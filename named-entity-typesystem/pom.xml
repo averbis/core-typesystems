@@ -3,8 +3,9 @@
 
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
-		<artifactId>core-typesystems</artifactId>
+		<artifactId>core-typesystems-parent</artifactId>
 		<version>4.8.0-SNAPSHOT</version>
+		<relativePath>../core-typesystems-parent</relativePath>
 	</parent>
 
 	<artifactId>named-entity-typesystem</artifactId>
