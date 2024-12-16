@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.averbis.textanalysis</groupId>
 		<artifactId>core-typesystems</artifactId>
-		<version>4.9.0</version>
+		<version>4.10.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>core-typesystems-bom</artifactId>
@@ -14,42 +14,42 @@
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>components-core-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>evaluation-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>measurement-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>named-entity-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>numeric-value-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>search-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>temporal-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>de.averbis.textanalysis</groupId>
 				<artifactId>text-typesystem</artifactId>
-				<version>4.9.0</version>
+				<version>4.10.0-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
