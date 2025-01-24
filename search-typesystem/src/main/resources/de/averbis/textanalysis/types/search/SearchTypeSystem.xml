@@ -47,7 +47,7 @@
 			</features>
 		</typeDescription>
 		<typeDescription>
-			<name>de.averbis.extraction.types.FacetMention</name>
+			<name>de.averbis.textanalysis.types.search.FacetMention</name>
 			<description>Metadata annotation type used to categorize and enable 
 			structured filtering of data across the product's Search module.</description>
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
