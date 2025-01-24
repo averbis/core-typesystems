@@ -838,28 +838,5 @@
 			<description>Utility annotation for indicating a member of a group.</description>
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 		</typeDescription>
-		<typeDescription>
-			<name>de.averbis.extraction.types.Facet</name>
-			<description>Metadata annotation type used to categorize and enable 
-			structured filtering of data across the product's Search module.</description>
-			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-			<features>
-				<featureDescription>
-					<name>kind</name>
-					<description>Used to specify how to parse the Facet annotation.</description>
-					<rangeTypeName>uima.cas.String</rangeTypeName>
-				</featureDescription>
-				<featureDescription>
-					<name>name</name>
-					<description>Name of the Facet annotation.</description>
-					<rangeTypeName>uima.cas.String</rangeTypeName>
-				</featureDescription>
-				<featureDescription>
-					<name>value</name>
-					<description>Value of the Facet annotation.</description>
-					<rangeTypeName>uima.cas.String</rangeTypeName>
-				</featureDescription>
-			</features>
-		</typeDescription>
 	</types>
 </typeSystemDescription>
