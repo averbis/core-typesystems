@@ -46,5 +46,29 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.extraction.types.FacetMention</name>
+			<description>Metadata annotation type used to categorize and enable 
+			structured filtering of data across the product's Search module.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>valueType</name>
+					<description>Identifies the type of the facet value - i.e. how to parse/interpret the value. 
+					Represented as a categorical string. Not mandatory.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>name</name>
+					<description>FacetMention name. Mandatory.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>value</name>
+					<description>FacetMention value. Not mandatory.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
 	</types>
 </typeSystemDescription>
