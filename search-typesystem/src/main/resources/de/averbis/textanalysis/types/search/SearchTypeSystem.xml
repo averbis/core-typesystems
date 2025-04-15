@@ -54,18 +54,20 @@
 			<features>
 				<featureDescription>
 					<name>valueType</name>
-					<description>Identifies the type of the facet value - i.e. how to parse/interpret the value. 
-					Allowed values are: 'string', 'date' (format yyyy-MM-dd) , 'double' and 'long'.</description>
+					<description>Identifies the type of the facet value - i.e. how to parse/interpret the value.
+					Allowed values are: 'string', 'date' (format yyyy-MM-dd) , 'double' and 'long'.
+					Defaults to 'string' if left empty.
+					</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
 					<name>name</name>
-					<description>The name of the facet. Non-alphanumerical characters will be replaced with a space.</description>
+					<description>The name of the facet. Mandatory. Only alphanumerical characters allowed. Non-alphanumerical characters will be normalized.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
 					<name>value</name>
-					<description>FacetMention value. Will be parsed according to valueType.</description>
+					<description>The value of the facet mention according to the valueType.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 			</features>
