@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<name>de.averbis.textanalysis.typesystems.CommandTypeSystem</name>
+	<description>A type system containing types for influencing annotator execution.</description>
+	<version>${project.version}</version>
+	<vendor>Averbis GmbH</vendor>
+	<imports>
+		<import name="de.averbis.extraction.types.AverbisInternalTypeSystem" />
+	</imports>
+	<types>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.command.Command</name>
+			<description>Supertype for various commands.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>reason</name>
+					<description>Optional reason for the command.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.command.CommandAbort</name>
+			<description>Command to abort pipeline processing. No more annotators will be executed potentially ignoring all other commands.</description>
+			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.command.CommandProceedAtAnnotator</name>
+			<description>Command to proceed at a specific annotator. This command skips also included annotators and proceeds at an potentially excluded annotator.</description>
+			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
+			<features>
+				<featureDescription>
+					<name>name</name>
+					<description>Name of the annotator to proceed at.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.command.CommandIncludeAnnotators</name>
+			<description>Command to include specific annotators in the further processing. Only listed annotators will be executed if the command is given. Included annotators cannot be excluded.</description>
+			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
+			<features>
+				<featureDescription>
+					<name>names</name>
+					<description>Names of the annotators that should be included in the pipeline processing.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.command.CommandExcludeAnnotators</name>
+			<description>Command to exclude specific annotators in the further processing. Listed annotators will be skipped if no explicitly listed in an include command.</description>
+			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
+			<features>
+				<featureDescription>
+					<name>names</name>
+					<description>Names of the annotators that should be excluded in the pipeline processing.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+	</types>
+</typeSystemDescription>
