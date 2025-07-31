@@ -27,7 +27,7 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.command.CommandProceedAtAnnotator</name>
-			<description>Command to proceed at a specific annotator. This command skips also included annotators and proceeds at an potentially excluded annotator. If multiple annoations of this type are present, then the pipeline will continue at the next possible annotator.</description>
+			<description>Command to proceed at a specific annotator. This command skips also included annotators and proceeds at a potentially excluded annotator. If multiple annotations of this type are present, then the pipeline will continue at the next possible annotator.</description>
 			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
 			<features>
 				<featureDescription>
