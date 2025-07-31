@@ -51,7 +51,7 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.command.CommandExcludeAnnotators</name>
-			<description>Command to exclude specific annotators in the further processing. Listed annotators will be skipped if no explicitly listed in an include command. The names of multiple commands of this type will be merged.</description>
+			<description>Command to exclude specific annotators in the further processing. Listed annotators will be skipped if not explicitly listed in an include command. The names of multiple commands of this type will be merged.</description>
 			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
 			<features>
 				<featureDescription>
