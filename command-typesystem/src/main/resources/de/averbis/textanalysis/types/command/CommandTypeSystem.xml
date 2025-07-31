@@ -46,6 +46,7 @@
 					<name>names</name>
 					<description>Names of the annotators that should be included in the pipeline processing.</description>
 					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
 			</features>
 		</typeDescription>
@@ -58,6 +59,7 @@
 					<name>names</name>
 					<description>Names of the annotators that should be excluded in the pipeline processing.</description>
 					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
 			</features>
 		</typeDescription>
