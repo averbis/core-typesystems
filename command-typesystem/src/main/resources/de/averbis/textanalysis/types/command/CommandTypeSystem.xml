@@ -27,7 +27,7 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.command.CommandProceedAtAnnotator</name>
-			<description>Command to proceed at a specific annotator. This command skips also included annotators and proceeds at an potentially excluded annotator.</description>
+			<description>Command to proceed at a specific annotator. This command skips also included annotators and proceeds at an potentially excluded annotator. If multiple annoations of this type are present, then the pipeline will continue at the next possible annotator.</description>
 			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
 			<features>
 				<featureDescription>
@@ -39,7 +39,7 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.command.CommandIncludeAnnotators</name>
-			<description>Command to include specific annotators in the further processing. Only listed annotators will be executed if the command is given. Included annotators cannot be excluded.</description>
+			<description>Command to include specific annotators in the further processing. Only listed annotators will be executed if the command is given. Included annotators cannot be excluded. The names of multiple commands of this type will be merged.</description>
 			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
 			<features>
 				<featureDescription>
@@ -51,7 +51,7 @@
 		</typeDescription>
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.command.CommandExcludeAnnotators</name>
-			<description>Command to exclude specific annotators in the further processing. Listed annotators will be skipped if no explicitly listed in an include command.</description>
+			<description>Command to exclude specific annotators in the further processing. Listed annotators will be skipped if no explicitly listed in an include command. The names of multiple commands of this type will be merged.</description>
 			<supertypeName>de.averbis.textanalysis.types.command.Command</supertypeName>
 			<features>
 				<featureDescription>
