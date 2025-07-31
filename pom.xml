@@ -102,6 +102,7 @@
 		<module>named-entity-typesystem</module>
 		<module>text-typesystem</module>
 		<module>search-typesystem</module>
+		<module>command-typesystem</module>
 		<module>core-typesystems-bom</module>
 	</modules>
 </project>
