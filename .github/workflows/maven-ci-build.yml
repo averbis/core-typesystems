@@ -1,0 +1,37 @@
+name: Maven CI build
+
+on:
+  push:
+    branches: [ "main", "release/**" ]
+    paths-ignore: [ ".github/**" ]
+  pull_request:
+    branches: [ "main", "release/**" ]
+    paths-ignore: [ ".github/**" ]
+  workflow_dispatch:
+    inputs:
+      deploy-strategy:
+        description: 'Deploy strategy can be `always`, `auto` or `skip`. In auto mode, it triggers when the current branch matches `main` or `release/*`.'
+        required: true
+        type: choice
+        default: 'auto'
+        options:
+          - always
+          - auto
+          - skip
+  workflow_run:
+    workflows: ["Maven release build"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+  checks: write
+  packages: write
+
+jobs:
+  build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    uses: averbis/common-github-workflows/.github/workflows/maven-ci-build.yml@v1
+    with:
+      deploy-strategy: ${{ inputs.deploy-strategy }}
+    secrets: inherit
