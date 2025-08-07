@@ -13,9 +13,10 @@
 	<properties>
 		<bnd-annotation-version>7.1.0</bnd-annotation-version>
 		<uima-version>3.6.0</uima-version>
-		<junit-jupiter-version>5.11.3</junit-jupiter-version>
-		<assertj-version>3.26.3</assertj-version>
-		<slf4j-version>2.0.16</slf4j-version>
+		<junit-jupiter-version>5.11.4</junit-jupiter-version>
+		<junit-platform-version>1.11.4</junit-platform-version>
+		<assertj-version>3.27.4</assertj-version>
+		<slf4j-version>2.0.17</slf4j-version>
 	</properties>
 
 	<dependencies>
@@ -98,6 +99,31 @@
 						<groupId>org.junit.jupiter</groupId>
 						<artifactId>junit-jupiter-engine</artifactId>
 						<version>${junit-jupiter-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-commons</artifactId>
+						<version>${junit-platform-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-engine</artifactId>
+						<version>${junit-platform-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-launcher</artifactId>
+						<version>${junit-platform-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-suite-engine</artifactId>
+						<version>${junit-platform-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.junit.platform</groupId>
+						<artifactId>junit-platform-suite-api</artifactId>
+						<version>${junit-platform-version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>

@@ -8,6 +8,7 @@
 	</parent>
 
 	<artifactId>core-typesystems-bom</artifactId>
+	<packaging>pom</packaging>
 
 	<dependencyManagement>
 		<dependencies>
