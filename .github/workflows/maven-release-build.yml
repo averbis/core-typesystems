@@ -1,0 +1,25 @@
+name: Maven release build
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Release Version'
+        required: true
+        type: string
+      next_version:
+        description: 'Next Version'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  checks: write
+
+jobs:
+  build:
+    uses: averbis/common-github-workflows/.github/workflows/maven-release-build.yml@v1
+    with:
+      release_version: ${{ inputs.release_version }}
+      next_version: ${{ inputs.next_version }}
+    secrets: inherit
