@@ -10,7 +10,9 @@
 
 	<artifactId>named-entity-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Named entity Types</name>
 	<description>Type system for named entities</description>
+	<url>https://github.com/averbis/core-typesystems</url>
 	
 	<dependencies>
 		<dependency>

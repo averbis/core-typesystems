@@ -10,8 +10,10 @@
 
 	<artifactId>text-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Text Types</name>
 	<description>Type system for general text properties and representations.</description>
-	
+	<url>https://github.com/averbis/core-typesystems</url>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.uima</groupId>

@@ -11,7 +11,9 @@
 
 	<artifactId>command-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Command Types</name>
 	<description>The type system of commands for influencing the processing.</description>
+	<url>https://github.com/averbis/core-typesystems</url>
 
 	<dependencies>
 		<dependency>

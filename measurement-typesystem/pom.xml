@@ -10,7 +10,9 @@
 
 	<artifactId>measurement-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Measurement Types</name>
 	<description>Type system for measurements</description>
+	<url>https://github.com/averbis/core-typesystems</url>
 
 	<dependencies>
 		<dependency>

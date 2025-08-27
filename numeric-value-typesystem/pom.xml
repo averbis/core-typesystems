@@ -10,7 +10,9 @@
 
 	<artifactId>numeric-value-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Numeric Value Types</name>
 	<description>Type system for numbers</description>
+	<url>https://github.com/averbis/core-typesystems</url>
 	
 	<dependencies>
 		<dependency>

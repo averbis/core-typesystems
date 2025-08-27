@@ -10,8 +10,10 @@
 
 	<artifactId>temporal-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Temporal Expression Types</name>
 	<description>Type system for temporal expressions</description>
-	
+	<url>https://github.com/averbis/core-typesystems</url>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
