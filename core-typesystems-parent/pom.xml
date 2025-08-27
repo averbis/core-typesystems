@@ -10,6 +10,9 @@
 	<artifactId>core-typesystems-parent</artifactId>
 	<packaging>pom</packaging>
 
+	<name>Averbis Core Type Systems :: Root</name>
+	<url>https://github.com/averbis/core-typesystems</url>
+
 	<properties>
 		<bnd-annotation-version>7.1.0</bnd-annotation-version>
 		<uima-version>3.6.0</uima-version>
