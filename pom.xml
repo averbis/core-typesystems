@@ -73,4 +73,20 @@
 		<module>command-typesystem</module>
 		<module>core-typesystems-bom</module>
 	</modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.8.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<deploymentName>Averbis Core Type Systems</deploymentName>
+					<publishingServerId>central</publishingServerId>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
