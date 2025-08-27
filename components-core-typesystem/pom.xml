@@ -10,7 +10,9 @@
 
 	<artifactId>components-core-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Core Types</name>
 	<description>The type system of the core components</description>
+	<url>https://github.com/averbis/core-typesystems</url>
 
 	<dependencies>
 		<dependency>

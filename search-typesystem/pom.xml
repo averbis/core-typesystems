@@ -10,8 +10,10 @@
 
 	<artifactId>search-typesystem</artifactId>
 
+	<name>Averbis Core Type Systems :: Search Types</name>
 	<description>Type system for search-based applications.</description>
-	
+	<url>https://github.com/averbis/core-typesystems</url>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
