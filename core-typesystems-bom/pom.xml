@@ -27,6 +27,9 @@
 							<goal>build-bom</goal>
 						</goals>
 						<configuration>
+							<bomName>${project.name}</bomName>
+							<bomDescription>${project.description}</bomDescription>
+							<useProjectParentAsParent>true</useProjectParentAsParent>
 							<attach>true</attach>
 						</configuration>
 					</execution>
