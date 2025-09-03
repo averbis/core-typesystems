@@ -176,8 +176,6 @@
 			</features>
 		</typeDescription>
 		<typeDescription>
-                  
-      
       <name>de.averbis.textanalysis.types.LLMContextMessages</name>
       <description>Additional information providing contextual messages for a specific LLM annotator, e.g., in-context learning examples.</description>
       <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
@@ -191,6 +189,30 @@
           <name>group</name>
           <description>The group to which the message belongs. A particular annotator typically process
 						all statements belonging to a certain group. The group is typically a parameter to the
+						annotator.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>de.averbis.textanalysis.types.DocumentChunk</name>
+      <description>Additional information providing contextual messages for a specific LLM annotator, e.g., in-context learning examples.</description>
+      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>embedding</name>
+          <description>The vector representing the chunk.</description>
+          <rangeTypeName>de.averbis.textanalysis.types.Embedding</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>prefix</name>
+          <description>Optional additional text that is prefixed before the text is embedded.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>group</name>
+          <description>The group to which the DocumentChunk belongs. A particular annotator typically process
+						all chunks belonging to a certain group. The group is typically a parameter to the
 						annotator.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
