@@ -196,7 +196,7 @@
     </typeDescription>
     <typeDescription>
       <name>de.averbis.textanalysis.types.DocumentChunk</name>
-      <description>Additional information providing contextual messages for a specific LLM annotator, e.g., in-context learning examples.</description>
+      <description>An annotation representing a chunk of a document and linkage to a corresponding embedding.</description>
       <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
       <features>
         <featureDescription>
@@ -210,12 +210,22 @@
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
+          <name>ignoreCoveredText</name>
+          <description>Optional to ignore the covered text of this annoation and to use only the prefix.</description>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
           <name>group</name>
           <description>The group to which the DocumentChunk belongs. A particular annotator typically process
 						all chunks belonging to a certain group. The group is typically a parameter to the
 						annotator.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
+        <featureDescription>
+					<name>reference</name>
+					<description>Optional reference to a source annotation if available on which this annotation is based.</description>
+					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
       </features>
     </typeDescription>
 	</types>
