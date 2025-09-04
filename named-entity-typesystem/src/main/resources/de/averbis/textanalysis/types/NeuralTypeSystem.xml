@@ -206,12 +206,12 @@
         </featureDescription>
         <featureDescription>
           <name>prefix</name>
-          <description>Optional additional text that is prefixed before the text is embedded.</description>
+          <description>Optional additional text that is prepended before the text is embedded.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
           <name>ignoreCoveredText</name>
-          <description>Optional to ignore the covered text of this annoation and to use only the prefix.</description>
+          <description>Option to ignore the covered text of this annotation. If set to true, only the prefix is embedded.</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
         <featureDescription>
