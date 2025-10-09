@@ -175,58 +175,104 @@
 				</featureDescription>
 			</features>
 		</typeDescription>
+		
 		<typeDescription>
-      <name>de.averbis.textanalysis.types.LLMContextMessages</name>
-      <description>Additional information providing contextual messages for a specific LLM annotator, e.g., in-context learning examples.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>messagesJson</name>
-          <description>The actual message for a specific annotation in its Json format.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>group</name>
-          <description>The group to which the message belongs. A particular annotator typically process
-						all statements belonging to a certain group. The group is typically a parameter to the
-						annotator.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
-    <typeDescription>
-      <name>de.averbis.textanalysis.types.DocumentChunk</name>
-      <description>An annotation representing a chunk of a document and linkage to a corresponding embedding.</description>
-      <supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>embedding</name>
-          <description>The vector representing the chunk.</description>
-          <rangeTypeName>de.averbis.textanalysis.types.Embedding</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>prefix</name>
-          <description>Optional additional text that is prepended before the text is embedded.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>ignoreCoveredText</name>
-          <description>Option to ignore the covered text of this annotation. If set to true, only the prefix is embedded.</description>
-          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>group</name>
-          <description>The group to which the DocumentChunk belongs. A particular annotator typically process
-						all chunks belonging to a certain group. The group is typically a parameter to the
-						annotator.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-					<name>reference</name>
-					<description>Optional reference to a source annotation if available on which this annotation is based.</description>
-					<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+			<name>de.averbis.textanalysis.types.LLMContextMessages</name>
+			<description>Additional information providing contextual messages for a specific LLM annotator, e.g., in-context learning examples.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>messagesJson</name>
+					<description>The actual message for a specific annotation in its Json format.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
-      </features>
-    </typeDescription>
+				<featureDescription>
+					<name>group</name>
+					<description>The group to which the message belongs. A particular annotator typically process
+								all statements belonging to a certain group. The group is typically a parameter to the
+								annotator.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+    	</typeDescription>
+
+    	<typeDescription>
+			<name>de.averbis.textanalysis.types.DocumentChunk</name>
+			<description>An annotation representing a chunk of a document and linkage to a corresponding embedding.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>embedding</name>
+					<description>The vector representing the chunk.</description>
+					<rangeTypeName>de.averbis.textanalysis.types.Embedding</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>prefix</name>
+					<description>Optional additional text that is prepended before the text is embedded.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>ignoreCoveredText</name>
+					<description>Option to ignore the covered text of this annotation. If set to true, only the prefix is embedded.</description>
+					<rangeTypeName>uima.cas.Boolean</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>group</name>
+					<description>The group to which the DocumentChunk belongs. A particular annotator typically process
+								all chunks belonging to a certain group. The group is typically a parameter to the
+								annotator.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+							<name>reference</name>
+							<description>Optional reference to a source annotation if available on which this annotation is based.</description>
+							<rangeTypeName>uima.tcas.Annotation</rangeTypeName>
+				</featureDescription>
+			</features>
+    	</typeDescription>
+
+		<typeDescription>
+			<name>de.averbis.textanalysis.types.LLMUsageTracking</name>
+			<description>Usage-related metdata for an LLM request.</description>
+			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
+			<features>
+				<featureDescription>
+					<name>promptTokens</name>
+					<description>Prompt tokens count.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>completionTokens</name>
+					<description>Completion tokens count.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>totalTokens</name>
+					<description>Total tokens count.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>reasoningTokens</name>
+					<description>Reasoning tokens count.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>cachedPromptTokens</name>
+					<description>Cached prompt tokens count.</description>
+					<rangeTypeName>uima.cas.Integer</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>totalTime</name>
+					<description>Total time taken for the LLM request in milliseconds.</description>
+					<rangeTypeName>uima.cas.Long</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
+					<name>timestamp</name>
+					<description>Timestamp of the LLM request.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+			</features>
+		</typeDescription>
+
 	</types>
 </typeSystemDescription>
