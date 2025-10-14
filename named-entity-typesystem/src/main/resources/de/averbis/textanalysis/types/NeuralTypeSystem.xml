@@ -237,6 +237,11 @@
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 			<features>
 				<featureDescription>
+					<name>modelId</name>
+					<description>Unique identifier of the LLM model.</description>
+					<rangeTypeName>uima.cas.String</rangeTypeName>
+				</featureDescription>
+				<featureDescription>
 					<name>promptTokens</name>
 					<description>Prompt tokens count.</description>
 					<rangeTypeName>uima.cas.Integer</rangeTypeName>
