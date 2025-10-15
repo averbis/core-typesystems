@@ -233,11 +233,11 @@
 
 		<typeDescription>
 			<name>de.averbis.textanalysis.types.LLMUsageTracking</name>
-			<description>Usage-related metdata for an LLM request.</description>
+			<description>Usage-related metadata for an LLM request.</description>
 			<supertypeName>de.averbis.extraction.types.CoreAnnotation</supertypeName>
 			<features>
 				<featureDescription>
-					<name>modelId</name>
+					<name>modelID</name>
 					<description>Unique identifier of the LLM model.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
