@@ -277,8 +277,11 @@
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
 				<featureDescription>
-					<name>metadataReferences</name>
-					<description>Array of metadata elements providing contextual information for disambiguation, tracking, or analysis.</description>
+					<name>metadata</name>
+					<description>Array of metadata elements providing contextual information for disambiguation, tracking, or analysis. 
+								Each element must follow the format 'key:value', where 'key' is a descriptive identifier (e.g., patientID, taskType) 
+								and 'value' is its corresponding string value (e.g., 12345, diagnosis). 
+								Keys must not contain colons, and values should avoid special characters that could interfere with parsing.</description>
 					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
 					<multipleReferencesAllowed>true</multipleReferencesAllowed>
 				</featureDescription>
