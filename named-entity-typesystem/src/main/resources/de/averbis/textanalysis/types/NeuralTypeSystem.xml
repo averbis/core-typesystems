@@ -276,6 +276,12 @@
 					<description>Timestamp of the LLM request.</description>
 					<rangeTypeName>uima.cas.String</rangeTypeName>
 				</featureDescription>
+				<featureDescription>
+					<name>metadataReferences</name>
+					<description>Array of metadata elements providing contextual information for disambiguation, tracking, or analysis.</description>
+					<rangeTypeName>uima.cas.StringArray</rangeTypeName>
+					<multipleReferencesAllowed>true</multipleReferencesAllowed>
+				</featureDescription>
 			</features>
 		</typeDescription>
 
